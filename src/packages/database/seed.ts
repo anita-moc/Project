@@ -26,245 +26,115 @@ async function main() {
 }
 
 const specialties = [
-  { name: 'Cardiología' },
-  { name: 'Dermatología' },
-  { name: 'Endocrinología' },
-  { name: 'Gastroenterología' },
-  { name: 'Geriatría' },
-  { name: 'Ginecología' },
-  { name: 'Hematología' },
-  { name: 'Infectología' },
-  { name: 'Medicina interna' },
-  { name: 'Nefrología' },
-  { name: 'Neumología' },
-  { name: 'Neurología' },
-  { name: 'Nutriología' },
-  { name: 'Oftalmología' },
-  { name: 'Oncología' },
-  { name: 'Pediatría' },
-  { name: 'Psiquiatría' },
-  { name: 'Reumatología' },
-  { name: 'Traumatología' },
-  { name: 'Urología' },
+  { name: 'General Medicine' },
+  { name: 'Dermatology' },
+  { name: 'Cardiology' },
+  { name: 'Endocrinology' },
+  { name: 'Gastroenterology' },
+  { name: 'Geriatrics' },
+  { name: 'Gynecology' },
+  { name: 'Hematology' },
+  { name: 'Infectious Disease' },
+  { name: 'Internal Medicine' },
+  { name: 'Nephrology' },
+  { name: 'Neurology' },
+  { name: 'Oncology' },
+  { name: 'Ophthalmology' },
+  { name: 'Orthopedics' },
+  { name: 'Pediatrics' },
+  { name: 'Psychiatry' },
+  { name: 'Pulmonology' },
+  { name: 'Rheumatology' },
+  { name: 'Urology' },
+  { name: 'Family Medicine' },
+  { name: 'Emergency Medicine' },
+  { name: 'Physical Medicine and Rehabilitation' },
+  { name: 'Anesthesiology' },
+  { name: 'Plastic Surgery' },
+  { name: 'Allergy and Immunology' }
 ];
 
 const symptoms = [
-  {
-    name: 'Silbido en el pecho',
-  },
-  {
-    name: 'Dolor de pecho/cuello',
-  },
-  {
-    name: 'Quejido',
-  },
-  {
-    name: 'Escalofríos y/o sudoración',
-  },
-  {
-    name: 'Dolor de cabeza',
-  },
-  {
-    name: 'Dolor de músculos o cuerpo',
-  },
-  {
-    name: 'Molestias al tragar o falta de apetito',
-  },
-  {
-    name: 'Mucosidad nasal',
-  },
-  {
-    name: 'Congestión nasal',
-  },
-  {
-    name: 'Irritabilidad',
-  },
-  {
-    name: 'Alteración de la voz',
-  },
-  {
-    name: 'Dificultad respiratoria',
-  },
-  {
-    name: 'Dolor de oído',
-  },
-  {
-    name: 'Conjuntivitis',
-  },
-  {
-    name: 'Diarrea',
-  },
-  {
-    name: 'Vómito',
-  },
-  {
-    name: 'Fatiga',
-  },
-  {
-    name: 'Compromiso de conciencia',
-  },
-  {
-    name: 'Respiración rápida',
-  },
-  {
-    name: 'Falta de oxígeno o cianosis',
-  },
-  {
-    name: 'Respiración lenta o ausencia de respiración',
-  },
-  {
-    name: 'Tos',
-  },
-  {
-    name: 'Temperatura',
-  },
+  { name: 'Wheezing' },
+  { name: 'Chest/neck pain' },
+  { name: 'Groaning' },
+  { name: 'Chills and/or sweating' },
+  { name: 'Headache' },
+  { name: 'Muscle or body pain' },
+  { name: 'Swallowing discomfort or lack of appetite' },
+  { name: 'Nasal mucus' },
+  { name: 'Nasal congestion' },
+  { name: 'Irritability' },
+  { name: 'Voice alteration' },
+  { name: 'Breathing difficulty' },
+  { name: 'Ear pain' },
+  { name: 'Conjunctivitis' },
+  { name: 'Diarrhea' },
+  { name: 'Vomiting' },
+  { name: 'Fatigue' },
+  { name: 'Altered consciousness' },
+  { name: 'Rapid breathing' },
+  { name: 'Lack of oxygen or cyanosis' },
+  { name: 'Slow or absent breathing' },
+  { name: 'Cough' },
+  { name: 'Fever' },
 ];
 
 const pathologies = [
-  {
-    name: 'Asma',
-  },
-  {
-    name: 'Bronconeumonía',
-  },
-  {
-    name: 'Bronquiolitis Aguda',
-  },
-  {
-    name: 'Bronquitis/Obstructiva Aguda/Crónica',
-  },
-  {
-    name: 'Influenza',
-  },
-  {
-    name: 'Neumonía Viral',
-  },
-  {
-    name: 'Síndrome Bronquial Obstructivo',
-  },
-  {
-    name: 'Resfriado común',
-  },
-  {
-    name: 'Epiglotitis',
-  },
-  {
-    name: 'Coqueluche',
-  },
-  {
-    name: 'Laringitis Aguda',
-  },
-  {
-    name: 'Laringitis Aguda Obstructiva',
-  },
-  {
-    name: 'Laringotraqueitis',
-  },
-  {
-    name: 'Neumonía Bacteriana',
-  },
-  {
-    name: 'Síndrome Coqueluchoide',
-  },
-  {
-    name: 'Traqueitis',
-  },
-  {
-    name: 'Faringoamigdalitis',
-  },
-  {
-    name: 'Adenoiditis Aguda',
-  },
-  {
-    name: 'Sinusitis',
-  },
-  {
-    name: 'Covid 19',
-  },
-  {
-    name: 'Neumonía Atópica',
-  },
+  { name: 'Asthma' },
+  { name: 'Bronchopneumonia' },
+  { name: 'Acute Bronchiolitis' },
+  { name: 'Bronchitis/Acute/Chronic Obstructive' },
+  { name: 'Influenza' },
+  { name: 'Viral Pneumonia' },
+  { name: 'Obstructive Bronchial Syndrome' },
+  { name: 'Common cold' },
+  { name: 'Epiglottitis' },
+  { name: 'Whooping cough' },
+  { name: 'Acute Laryngitis' },
+  { name: 'Obstructive Acute Laryngitis' },
+  { name: 'Laryngotracheitis' },
+  { name: 'Bacterial Pneumonia' },
+  { name: 'Whooping Cough-like Syndrome' },
+  { name: 'Tracheitis' },
+  { name: 'Pharyngotonsillitis' },
+  { name: 'Acute Adenoiditis' },
+  { name: 'Sinusitis' },
+  { name: 'Covid 19' },
+  { name: 'Atopic Pneumonia' },
 ];
 
 const appointmentTypes = [
-  { name: 'Consulta', color: '#FF0000' },
-  { name: 'Estudio', color: '#00FF00' },
+  { name: 'Consultation', color: '#FF0000' },
+  { name: 'Study', color: '#00FF00' },
   { name: 'Procedure', color: '#0000FF' },
 ];
 
 const test = [
-  {
-    name: 'Blood test',
-  },
-  {
-    name: 'Urine test',
-  },
-  {
-    name: 'X-ray',
-  },
-  {
-    name: 'MRI',
-  },
-  {
-    name: 'CT Scan',
-  },
-  {
-    name: 'Ultrasound',
-  },
-  {
-    name: 'Biopsy',
-  },
-  {
-    name: 'Endoscopy',
-  },
-  {
-    name: 'Colonoscopy',
-  },
-  {
-    name: 'Laparoscopy',
-  },
-  {
-    name: 'Angiography',
-  },
-  {
-    name: 'Echocardiography',
-  },
-  {
-    name: 'Electrocardiogram',
-  },
-  {
-    name: 'Electroencephalogram',
-  },
-  {
-    name: 'Electromyography',
-  },
-  {
-    name: 'Pulmonary function test',
-  },
-  {
-    name: 'Bone marrow test',
-  },
-  {
-    name: 'Skin test',
-  },
-  {
-    name: 'Sweat test',
-  },
-  {
-    name: 'Tilt table test',
-  },
-  {
-    name: 'Treadmill test',
-  },
-  {
-    name: 'Ultraviolet light test',
-  },
-  {
-    name: 'Vascular test',
-  },
-  {
-    name: 'Vestibular test',
-  },
+  { name: 'Blood test' },
+  { name: 'Urine test' },
+  { name: 'X-ray' },
+  { name: 'MRI' },
+  { name: 'CT Scan' },
+  { name: 'Ultrasound' },
+  { name: 'Biopsy' },
+  { name: 'Endoscopy' },
+  { name: 'Colonoscopy' },
+  { name: 'Laparoscopy' },
+  { name: 'Angiography' },
+  { name: 'Echocardiography' },
+  { name: 'Electrocardiogram' },
+  { name: 'Electroencephalogram' },
+  { name: 'Electromyography' },
+  { name: 'Pulmonary function test' },
+  { name: 'Bone marrow test' },
+  { name: 'Skin test' },
+  { name: 'Sweat test' },
+  { name: 'Tilt table test' },
+  { name: 'Treadmill test' },
+  { name: 'Ultraviolet light test' },
+  { name: 'Vascular test' },
+  { name: 'Vestibular test' },
 ];
 
 main()

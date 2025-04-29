@@ -29,7 +29,15 @@ import dynamic from 'next/dynamic';
 
 const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
 
-
+// Create a mutable copy of the animation data
+const defaultOptions = {
+  animationData: JSON.parse(JSON.stringify(successAnimation)),
+  autoplay: true,
+  loop: false,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
 
 const formSchema = z.object({
   licenseMedicalNumber: z.string().min(3, { message: 'License Medical Number must be at least 3 characters long' }),
@@ -100,7 +108,7 @@ const DoctorForm = ({ userId, specialties }: { userId: string; specialties: Prim
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger className="rounded-none">
-                          <SelectValue placeholder="Select a verified email to display" />
+                          <SelectValue placeholder="Select a speciality" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent className="rounded-none">
@@ -129,16 +137,9 @@ const DoctorForm = ({ userId, specialties }: { userId: string; specialties: Prim
       <AlertDialog open={showSuccessModal}>
         <AlertDialogContent className="sm:rounded-none">
           <Lottie
-            options={{
-              autoplay: true,
-              loop: false,
-              animationData: successAnimation,
-              rendererSettings: {
-                preserveAspectRatio: 'xMidYMid slice',
-              },
-            }}
+            options={defaultOptions}
             style={{ width: 300, height: 300 }}
-          ></Lottie>
+          />
           <AlertDialogHeader className="my-0">
             <AlertDialogTitle className="text-center text-2xl">Verification!</AlertDialogTitle>
             <AlertDialogDescription className="text-center text-lg">

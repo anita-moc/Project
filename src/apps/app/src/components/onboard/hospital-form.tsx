@@ -25,6 +25,15 @@ import dynamic from 'next/dynamic';
 
 const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
 
+// Create a mutable copy of the animation data
+const defaultOptions = {
+  animationData: JSON.parse(JSON.stringify(successAnimation)),
+  autoplay: true,
+  loop: false,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
 
 const formSchema = z.object({
   name: z.string().min(3, { message: 'The Name must have at least 3 characters' }),
@@ -171,16 +180,9 @@ const HospitalForm = ({ userId }: { userId: string }) => {
       <AlertDialog open={showSuccessModal}>
         <AlertDialogContent className="rounded-none">
           <Lottie
-            options={{
-              autoplay: true,
-              loop: false,
-              animationData: successAnimation,
-              rendererSettings: {
-                preserveAspectRatio: 'xMidYMid slice',
-              },
-            }}
+            options={defaultOptions}
             style={{ width: 300, height: 300 }}
-          ></Lottie>
+          />
           <AlertDialogHeader className="my-0">
             <AlertDialogTitle className="text-center text-2xl">Verified!</AlertDialogTitle>
             <AlertDialogDescription className="text-center text-lg">
