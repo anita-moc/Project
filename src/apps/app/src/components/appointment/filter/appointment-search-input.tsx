@@ -133,7 +133,7 @@ const AppointmentSearchInput = ({ specialties, types, states }: Props) => {
             autoCapitalize="none"
             autoCorrect="off"
             spellCheck="false"
-            placeholder="Busca o filtra"
+            placeholder="Search or filter"
           />
           <DropdownMenuTrigger asChild>
             <button
@@ -161,7 +161,7 @@ const AppointmentSearchInput = ({ specialties, types, states }: Props) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="">
             <Stethoscope className="size-4 mr-2" />
-            <span>Especialidad</span>
+            <span>Specialty</span>
           </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>
@@ -185,7 +185,7 @@ const AppointmentSearchInput = ({ specialties, types, states }: Props) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="">
             <CalendarDays className="size-4 mr-2" />
-            <span>Fechas</span>
+            <span>Dates</span>
           </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>
@@ -214,7 +214,7 @@ const AppointmentSearchInput = ({ specialties, types, states }: Props) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="">
             <Route className="size-4 mr-2" />
-            <span>Estado de la cita</span>
+            <span>Appointment status</span>
           </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>
@@ -238,7 +238,7 @@ const AppointmentSearchInput = ({ specialties, types, states }: Props) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="">
             <SquareStack className="size-4 mr-2" />
-            <span>Tipo de cita</span>
+            <span>Appointment type</span>
           </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>

@@ -52,7 +52,7 @@ const History = () => {
       <AccordionItem value="recordings">
         <AccordionTrigger>
           <div className="flex justify-start items-center gap-2">
-            Grabaciones <Video className="size-4" />
+            Recordings <Video className="size-4" />
           </div>
         </AccordionTrigger>
         <AccordionContent className="grid grid-cols-2 gap-4">
@@ -66,7 +66,7 @@ const History = () => {
       <AccordionItem value="transcriptions">
         <AccordionTrigger>
           <div className="flex justify-start items-center gap-2">
-            Transcripciones <AudioLines className="size-4" />
+            Transcripts <AudioLines className="size-4" />
           </div>
         </AccordionTrigger>
         <AccordionContent className="">

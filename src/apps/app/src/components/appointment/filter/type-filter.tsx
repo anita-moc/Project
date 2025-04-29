@@ -28,8 +28,8 @@ const SelectType = ({ selected, onChange, headless, types }: Props) => {
   return (
     <ComboboxDropdown
       headless={headless}
-      placeholder="Selecciona un tipo de cita"
-      searchPlaceholder="Busca un tipo de cita"
+      placeholder="Select an Appointment type"
+      searchPlaceholder="Find an Appointment type"
       items={types.map(transformType)}
       selectedItem={selectedValue}
       onSelect={(item) => {

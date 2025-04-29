@@ -12,7 +12,7 @@ const Diagnosis = ({ data }: { data: Primitives<Appointment> }) => {
         fallback={
           <Button className="gap-2" variant={'outline'} disabled>
             <ClipboardMinus className="size-4" />
-            Diagnostico
+            Diagnosis
           </Button>
         }
       >

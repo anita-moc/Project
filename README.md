@@ -1,17 +1,10 @@
 ![hero](github.png)
 
 <p align="center">
-	<h1 align="center"><b>Helsa</b></h1>
+	<h1 align="center"><b>Gonurse</b></h1>
 <p align="center">
    <strong>Modern telemedicine platform for virtual consultations and health monitoring.</strong>
-    <br />
-    <br />
-    <a href="https://discord.gg/helsa-care">Discord</a>
-    ·
-    <a href="https://helsahealthcare.com">Website</a>
-    ·
-    <a href="https://github.com/duccem/helsa/issues">Issues</a>
-  </p>
+</p>
 </p>
 
 ## Table of Contents
@@ -34,7 +27,7 @@
 
 ## Introduction
 
-Welcome to **Helsa**, a cutting-edge telemedicine platform designed to connect patients and healthcare providers seamlessly. Helsa offers a modern and intuitive interface for virtual consultations, health monitoring, and medical record management.
+Welcome to **Gonurse**, a cutting-edge telemedicine platform designed to connect patients and healthcare providers seamlessly. Gonurse offers a modern and intuitive interface for virtual consultations, health monitoring, and medical record management.
 
 This repository contains both, backend, frontend and mobile source code, destined to manage all main features of the platform.
 
@@ -49,7 +42,7 @@ This repository contains both, backend, frontend and mobile source code, destine
 
 ## Architecture
 
-Helsa is built using a modern tech stack that includes Next.js, Supabase, Prisma, and Trigger.dev. The frontend is built with Next.js, while the backend is also built with Next.js and uses Supabase for the database and Prisma for ORM. Trigger.dev is used for background jobs, and Better-auth is used for authentication.
+Gonurse is built using a modern tech stack that includes Next.js, Supabase, Prisma, and Trigger.dev. The frontend is built with Next.js, while the backend is also built with Next.js and uses Supabase for the database and Prisma for ORM. Trigger.dev is used for background jobs, and Better-auth is used for authentication.
 
 ### Tech Stack
 
@@ -93,8 +86,8 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/Duccem/helsa.git
-   cd helsa
+   git clone 
+   cd gonurse
    ```
 
 2. **Install dependencies**:
@@ -160,7 +153,7 @@ Before you begin, ensure you have the following installed:
 
 ### Deployment
 
-Helsa is designed to be deployed on Vercel, but you can deploy it on any platform that supports Node.js.
+Gonurse is designed to be deployed on Vercel, but you can deploy it on any platform that supports Node.js.
 
 1. **Deploy to Vercel**:
 
@@ -173,28 +166,3 @@ Helsa is designed to be deployed on Vercel, but you can deploy it on any platfor
 
 - [Gitflow Diagram](docs/gitflow-diagram.md)
 - [ER Diagram](docs/er-diagram.md)
-
-## Other links
-
-- [Changelog](https://github.com/Duccem/ducen-hospital/blob/main/CHANGELOG.md)
-- [Roadmap](https://github.com/Duccem/ducen-hospital/blob/main/ROADMAP.md)
-
-## Contributing
-
-- [José Véliz (Duccem)](https://github.com/Duccem)
-- [Altair De Melo](https://github.com/Aldor112)
-- [Jesus Brito](https://github.com/JesusBritoS)
-
-<a href="https://github.com/duccem/ducen/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=duccem/helsa" />
-</a>
-
-## License
-
-This project is licensed under the MIT License.
-
-[License](https://github.com/Duccem/ducen-hospital/blob/main/LICENSE)
-
-## Contact
-
-For any questions or inquiries, please contact us at [support@helsa.com](mailto:support@helsa.com).

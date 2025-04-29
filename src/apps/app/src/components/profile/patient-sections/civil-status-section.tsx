@@ -34,7 +34,7 @@ export const CivilStatusSection = ({ civilStatus, id }: CivilStatusValue & { id:
     try {
       await updateDemographic({ patientId: id, demographic: data });
       setIsEditing(false);
-      toast.success('Estado civil actualizado correctamente');
+      toast.success('Civil status updated correctly');
       router.refresh();
     } catch (error) {
       console.log(error);
@@ -50,9 +50,9 @@ export const CivilStatusSection = ({ civilStatus, id }: CivilStatusValue & { id:
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Estado civil</CardTitle>
+              <CardTitle>Status civil</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                {isEditing ? 'Selecciona tu estado civil.' : 'Tu estado civil es importante para nosotros'}
+                {isEditing ? 'Select your marital status.' : 'Your marital status is important to us.'}
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{selectedCivilStatus?.name}</p>
@@ -84,7 +84,8 @@ export const CivilStatusSection = ({ civilStatus, id }: CivilStatusValue & { id:
             </div>
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
-            <p className="text-muted-foreground text-xs">Puedes actualizar tu estado civil en cualquier momento.</p>
+            <p className="text-muted-foreground text-xs">
+            You can update your marital status at any time.</p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
                 <Button
@@ -94,7 +95,7 @@ export const CivilStatusSection = ({ civilStatus, id }: CivilStatusValue & { id:
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -102,7 +103,7 @@ export const CivilStatusSection = ({ civilStatus, id }: CivilStatusValue & { id:
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>
@@ -115,18 +116,18 @@ export const CivilStatusSection = ({ civilStatus, id }: CivilStatusValue & { id:
 const civilStatusOptions = [
   {
     id: 'SINGLE',
-    name: 'Soltero/a',
+    name: 'Single/a',
   },
   {
     id: 'MARRIED',
-    name: 'Casado/a',
+    name: 'Married/a',
   },
   {
     id: 'DIVORCED',
-    name: 'Divorciado/a',
+    name: 'Divorced/a',
   },
   {
     id: 'WIDOWED',
-    name: 'Viudo/a',
+    name: 'Widowed/a',
   },
 ];

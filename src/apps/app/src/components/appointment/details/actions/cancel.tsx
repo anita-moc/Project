@@ -9,7 +9,7 @@ const Cancel = ({ status }: { status: string }) => {
   return (
     <Button variant={'destructive'} className="text-white h-9 gap-2">
       <Ban className="size-4" />
-      Cancelar
+      Cancel
     </Button>
   );
 };

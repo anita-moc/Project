@@ -39,7 +39,7 @@ const AppointmentActions = () => {
               <DropdownMenuGroup>
                 <DropdownMenuItem className="rounded-none gap-3" onClick={() => setRowSelection({})}>
                   <Ban className="size-4" />
-                  <span>Cancelar</span>
+                  <span>Cancel</span>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>

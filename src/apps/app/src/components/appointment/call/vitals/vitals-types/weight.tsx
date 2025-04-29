@@ -22,7 +22,7 @@ const WeightInfo = ({ value, toggle }: WightProps) => {
   return (
     <VitalSign
       icon={<WeightIcon className="h-5 w-5" />}
-      label="Peso"
+      label="Weight"
       value={value}
       unit="kg"
       max={100}
@@ -33,7 +33,7 @@ const WeightInfo = ({ value, toggle }: WightProps) => {
 };
 
 const formSchema = z.object({
-  weight: z.string().min(1, { message: 'Debe introducir un valor valido' }),
+  weight: z.string().min(1, { message: 'You must enter a valid value' }),
 });
 
 const WeightForm = ({
@@ -63,10 +63,10 @@ const WeightForm = ({
         weight: Number(data.weight),
       });
       toggle();
-      toast.success('Signos vitales guardados correctamente');
+      toast.success('Vital signs saved correctly');
       router.refresh();
     } catch (error) {
-      toast.error('Error al guardar los signos vitales');
+      toast.error('Error saving vital signs');
     }
   };
 
@@ -83,7 +83,7 @@ const WeightForm = ({
           render={({ field }) => (
             <FormItem className="border rounded-xl p-4 my-0 h-full">
               <FormLabel className="text-sm flex justify-between">
-                Peso
+                Weight
                 <div onClick={toggle} className="cursor-pointer">
                   <X className="size-4" />
                 </div>
@@ -97,7 +97,7 @@ const WeightForm = ({
                     disabled={form.formState.isSubmitting}
                     className="rounded-l-none p-0 px-2 h-10"
                   >
-                    {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar '}
+                    {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Keep '}
                   </Button>
                 </div>
               </FormControl>

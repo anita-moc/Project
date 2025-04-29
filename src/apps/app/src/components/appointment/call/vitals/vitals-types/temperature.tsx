@@ -22,7 +22,7 @@ const TemperatureInfo = ({ value, toggle }: TemperatureProps) => {
   return (
     <VitalSign
       icon={<Thermometer className="h-5 w-5" />}
-      label="Temperatura"
+      label="Temperature"
       value={value}
       unit="°C"
       max={37.5}
@@ -33,7 +33,7 @@ const TemperatureInfo = ({ value, toggle }: TemperatureProps) => {
 };
 
 const formSchema = z.object({
-  temperature: z.string().min(1, { message: 'Debe introducir un valor valido' }),
+  temperature: z.string().min(1, { message: 'You must enter a valid value' }),
 });
 
 const TemperatureForm = ({
@@ -63,10 +63,10 @@ const TemperatureForm = ({
         temperature: Number(data.temperature),
       });
       toggle();
-      toast.success('Signos vitales guardados correctamente');
+      toast.success('Vital signs saved correctly');
       router.refresh();
     } catch (error) {
-      toast.error('Error al guardar los signos vitales');
+      toast.error('Error saving vital signs');
     }
   };
 
@@ -83,7 +83,7 @@ const TemperatureForm = ({
           render={({ field }) => (
             <FormItem className="border rounded-xl p-4 my-0 h-full">
               <FormLabel className="text-sm flex justify-between">
-                Temperatura
+               Temperature
                 <div onClick={toggle} className="cursor-pointer">
                   <X className="size-4" />
                 </div>
@@ -97,7 +97,7 @@ const TemperatureForm = ({
                     disabled={form.formState.isSubmitting}
                     className="rounded-l-none p-0 px-2 h-10"
                   >
-                    {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar '}
+                    {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Keep '}
                   </Button>
                 </div>
               </FormControl>

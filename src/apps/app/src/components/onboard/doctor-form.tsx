@@ -22,10 +22,14 @@ import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Lottie from 'react-lottie';
 import { toast } from 'sonner';
 import { v4 } from 'uuid';
 import { z } from 'zod';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
+
+
 
 const formSchema = z.object({
   licenseMedicalNumber: z.string().min(3, { message: 'License Medical Number must be at least 3 characters long' }),
@@ -68,9 +72,9 @@ const DoctorForm = ({ userId, specialties }: { userId: string; specialties: Prim
         <form action="" className="w-full" onSubmit={form.handleSubmit(onSubmit)}>
           <Card className="border-none shadow-none w-full">
             <CardHeader>
-              <CardTitle>Bienvenido</CardTitle>
+              <CardTitle>Welcome</CardTitle>
               <CardDescription>
-                Por favor, completa los siguientes campos para continuar con el proceso de registro
+              Please complete the following fields to continue with the Records process
               </CardDescription>
             </CardHeader>
             <CardContent className="k">
@@ -79,7 +83,7 @@ const DoctorForm = ({ userId, specialties }: { userId: string; specialties: Prim
                 name="licenseMedicalNumber"
                 render={({ field }) => (
                   <FormItem className="my-2">
-                    <FormLabel className="text-sm">Número de licencia médica</FormLabel>
+                    <FormLabel className="text-sm">Medical license number</FormLabel>
                     <FormControl>
                       <Input {...field} className="rounded-none"></Input>
                     </FormControl>
@@ -92,7 +96,7 @@ const DoctorForm = ({ userId, specialties }: { userId: string; specialties: Prim
                 name="specialtyId"
                 render={({ field }) => (
                   <FormItem className="flex-1">
-                    <FormLabel className="text-sm">Especialidad</FormLabel>
+                    <FormLabel className="text-sm">Specialty</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger className="rounded-none">
@@ -115,7 +119,7 @@ const DoctorForm = ({ userId, specialties }: { userId: string; specialties: Prim
             <CardFooter>
               <div className="grid w-full gap-y-4">
                 <Button type="submit" className="rounded-none">
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Continuar'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Continue'}
                 </Button>
               </div>
             </CardFooter>
@@ -136,9 +140,9 @@ const DoctorForm = ({ userId, specialties }: { userId: string; specialties: Prim
             style={{ width: 300, height: 300 }}
           ></Lottie>
           <AlertDialogHeader className="my-0">
-            <AlertDialogTitle className="text-center text-2xl">Verificado!</AlertDialogTitle>
+            <AlertDialogTitle className="text-center text-2xl">Verification!</AlertDialogTitle>
             <AlertDialogDescription className="text-center text-lg">
-              Has completado el proceso de registro exitosamente
+            You have successfully completed the Records process
             </AlertDialogDescription>
           </AlertDialogHeader>
 
@@ -152,7 +156,7 @@ const DoctorForm = ({ userId, specialties }: { userId: string; specialties: Prim
                 size="lg"
                 className="rounded-none"
               >
-                Ir al inicio
+               Go to Dashboard
               </Button>
             </AlertDialogAction>
           </AlertDialogFooter>

@@ -51,11 +51,11 @@ const CreatePriceModal = ({ isOpen, onOpenChange, doctorId, types }: Props) => {
   const createType = useAction(savePrice, {
     onSuccess: () => {
       onOpenChange(false);
-      toast.success('Tarifa creada');
+      toast.success('Created rate');
       router.refresh();
     },
     onError: () => {
-      toast.error('Error al crear la tarifa');
+      toast.error('Error creating rate');
     },
   });
   const form = useForm({
@@ -95,8 +95,8 @@ const CreatePriceModal = ({ isOpen, onOpenChange, doctorId, types }: Props) => {
         <form onSubmit={form.handleSubmit(onSubmit, (error) => console.log(error))}>
           <div className="p-4">
             <DialogHeader className="mb-4">
-              <DialogTitle>Crear tarifa</DialogTitle>
-              <DialogDescription>Crea tus tarifas aquí</DialogDescription>
+              <DialogTitle>Create rate</DialogTitle>
+              <DialogDescription>Create your rates here</DialogDescription>
             </DialogHeader>
 
             <div className="flex flex-col space-y-6 max-h-[400px] overflow-auto">
@@ -110,7 +110,7 @@ const CreatePriceModal = ({ isOpen, onOpenChange, doctorId, types }: Props) => {
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Nombre de la tarifa"
+                            placeholder="Rate name"
                             className="rounded-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                           />
                         </FormControl>
@@ -125,7 +125,7 @@ const CreatePriceModal = ({ isOpen, onOpenChange, doctorId, types }: Props) => {
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Precio"
+                            placeholder="Price"
                             className="rounded-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                             type="number"
                           />
@@ -142,7 +142,7 @@ const CreatePriceModal = ({ isOpen, onOpenChange, doctorId, types }: Props) => {
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="w-full rounded-none focus:outline-none focus:ring-0 focus:ring-transparent">
-                              <SelectValue placeholder="Moneda" />
+                              <SelectValue placeholder="Currency" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="rounded-none">
@@ -169,7 +169,7 @@ const CreatePriceModal = ({ isOpen, onOpenChange, doctorId, types }: Props) => {
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="w-full rounded-none focus:outline-none focus:ring-0 focus:ring-transparent">
-                              <SelectValue placeholder="Tipo de consulta" />
+                              <SelectValue placeholder="Query type" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="rounded-none">
@@ -195,7 +195,7 @@ const CreatePriceModal = ({ isOpen, onOpenChange, doctorId, types }: Props) => {
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="w-full rounded-none focus:outline-none focus:ring-0 focus:ring-transparent">
-                              <SelectValue placeholder="Duración" />
+                              <SelectValue placeholder="Duration" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="rounded-none">

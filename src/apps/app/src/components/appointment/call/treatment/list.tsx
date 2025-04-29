@@ -11,9 +11,9 @@ type Props = {
 };
 
 const types = {
-  MEDICATION: 'Medicamento',
-  THERAPY: 'Terapia',
-  PROCEDURE: 'Procedimiento',
+  MEDICATION: 'Medicine',
+  THERAPY: 'Therapy',
+  PROCEDURE: 'Procedure',
 };
 const TreatmentList = ({ toggle, treatments }: Props) => {
   return (
@@ -51,7 +51,7 @@ const TreatmentList = ({ toggle, treatments }: Props) => {
       </div>
       <Button onClick={toggle}>
         <Pill className="size-4" />
-        Agregar tratamiento
+        Add treatment
       </Button>
     </div>
   );

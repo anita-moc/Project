@@ -16,16 +16,16 @@ import { z } from 'zod';
 const formSchema = z.object({
   address: z.object({
     city: z.string().min(2, {
-      message: 'La ciudad debe tener al menos 2 caracteres.',
+      message: 'The city must have at least 2 characters.',
     }),
     street: z.string().min(2, {
-      message: 'La calle debe tener al menos 2 caracteres.',
+      message: 'The street must have at least 2 characters.',
     }),
     country: z.string().min(2, {
-      message: 'El país debe tener al menos 2 caracteres.',
+      message: 'The country must have at least 2 characters.',
     }),
     zipCode: z.string().min(2, {
-      message: 'El código postal debe tener al menos 2 caracteres.',
+      message: 'The postal code must have at least 2 characters.',
     }),
   }),
 });
@@ -67,8 +67,8 @@ export const AddressSection = ({ address, id }: AddressFormValues & { id: string
               <CardTitle>Dirección</CardTitle>
               <p className="text-sm text-muted-foreground mt-2">
                 {isEditing
-                  ? 'Edita la dirección de tu hospital para que los pacientes puedan encontrarte.'
-                  : 'La dirección de tu hospital es importante para que los pacientes puedan encontrarte.'}
+                  ? 'Edit your hospital address so patients can find you.'
+                  : 'Your hospital address is important so patients can find you.'}
               </p>
               {!isEditing ? (
                 <div className="space-y-2 mt-3">
@@ -87,7 +87,7 @@ export const AddressSection = ({ address, id }: AddressFormValues & { id: string
                       name="address.city"
                       render={({ field }) => (
                         <FormItem className="flex-1">
-                          <FormLabel>Ciudad</FormLabel>
+                          <FormLabel>City</FormLabel>
                           <FormControl>
                             <Input {...field} className="outline-none rounded-none"></Input>
                           </FormControl>
@@ -100,7 +100,7 @@ export const AddressSection = ({ address, id }: AddressFormValues & { id: string
                       name="address.street"
                       render={({ field }) => (
                         <FormItem className="flex-1">
-                          <FormLabel>Calle</FormLabel>
+                          <FormLabel>Street</FormLabel>
                           <FormControl>
                             <Input {...field} className="outline-none rounded-none"></Input>
                           </FormControl>
@@ -115,7 +115,7 @@ export const AddressSection = ({ address, id }: AddressFormValues & { id: string
                       name="address.country"
                       render={({ field }) => (
                         <FormItem className="flex-1">
-                          <FormLabel>País</FormLabel>
+                          <FormLabel>Country</FormLabel>
                           <FormControl>
                             <Input {...field} className="outline-none rounded-none"></Input>
                           </FormControl>
@@ -128,7 +128,7 @@ export const AddressSection = ({ address, id }: AddressFormValues & { id: string
                       name="address.zipCode"
                       render={({ field }) => (
                         <FormItem className="flex-1">
-                          <FormLabel>Código postal</FormLabel>
+                          <FormLabel>Zip code</FormLabel>
                           <FormControl>
                             <Input {...field} className="outline-none rounded-none"></Input>
                           </FormControl>
@@ -144,8 +144,8 @@ export const AddressSection = ({ address, id }: AddressFormValues & { id: string
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
               {isEditing
-                ? 'Asegúrate de que la dirección sea correcta para que los pacientes puedan encontrarte.'
-                : 'La dirección de tu hospital es importante para que los pacientes puedan encontrarte.'}
+                ? 'Make sure the address is correct so patients can find you.'
+                : 'Your hospital address is important so patients can find you.'}
             </p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
@@ -156,7 +156,7 @@ export const AddressSection = ({ address, id }: AddressFormValues & { id: string
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -164,7 +164,7 @@ export const AddressSection = ({ address, id }: AddressFormValues & { id: string
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>

@@ -9,7 +9,7 @@ const HeartRate = () => {
         <HeartPulse />
       </CardHeader>
       <CardContent>
-        <p className="text-xs text-muted-foreground">Ritmo cardíaco</p>
+        <p className="text-xs text-muted-foreground">Heart Rate</p>
       </CardContent>
     </Card>
   );

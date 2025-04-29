@@ -38,12 +38,12 @@ export const columns: ColumnDef<Primitives<Appointment>>[] = [
   },
   {
     accessorKey: 'date',
-    header: 'Fecha',
+    header: 'Date',
     cell: ({ row }) => formatDate(row.original.date, 'PPPp', { locale: es }),
   },
   {
     accessorKey: 'status',
-    header: 'Estado',
+    header: 'Status',
     cell: ({ row }) => <StateColumn state={row.original.status} />,
   },
   {
@@ -53,12 +53,12 @@ export const columns: ColumnDef<Primitives<Appointment>>[] = [
   },
   {
     accessorKey: 'specialty',
-    header: 'Especialidad',
+    header: 'Specialty',
     cell: ({ row }) => row.original.specialty?.name,
   },
   {
     accessorKey: 'type',
-    header: 'Tipo de consulta',
+    header: 'Query type',
     cell: ({ row }) => <TypeColumn name={row.original.type?.name || ''} color={row.original.type?.color || ''} />,
   },
   {
@@ -82,7 +82,7 @@ export const columns: ColumnDef<Primitives<Appointment>>[] = [
               <DropdownMenuSeparator />
               {row.original?.status === 'SCHEDULED' && (
                 <AlertDialogTrigger asChild>
-                  <DropdownMenuItem className="text-destructive ">Cancelar</DropdownMenuItem>
+                  <DropdownMenuItem className="text-destructive ">Cancel</DropdownMenuItem>
                 </AlertDialogTrigger>
               )}
             </DropdownMenuContent>

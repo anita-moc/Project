@@ -11,7 +11,7 @@ export const EmailSection = () => {
         <div>
           <CardTitle>Email</CardTitle>
           <p className="text-muted-foreground text-sm mt-5">
-            Tu dirección de correo electrónico es privada y no será compartida con nadie.
+          Your email address is private and will not be shared with anyone.
           </p>
           <p className="text-primary font-bold mt-3">{user.email}</p>
         </div>

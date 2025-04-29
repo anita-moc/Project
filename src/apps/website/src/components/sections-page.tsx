@@ -232,7 +232,7 @@ export default function SectionOne() {
                 <svg xmlns="http://www.w3.org/2000/svg" width={18} height={13} fill="none">
                   <path fill="currentColor" d="M6.55 13 .85 7.3l1.425-1.425L6.55 10.15 15.725.975 17.15 2.4 6.55 13Z" />
                 </svg>
-                <span className="text-primary">Chatea con tus pacientes</span>
+                <span className="text-primary">Chatea con tus Patients</span>
               </div>
 
               <div className="flex space-x-2 items-center text-sm">
@@ -246,14 +246,14 @@ export default function SectionOne() {
                 <svg xmlns="http://www.w3.org/2000/svg" width={18} height={13} fill="none">
                   <path fill="currentColor" d="M6.55 13 .85 7.3l1.425-1.425L6.55 10.15 15.725.975 17.15 2.4 6.55 13Z" />
                 </svg>
-                <span className="text-primary">Revisa los exámenes y valores vitales de tus pacientes</span>
+                <span className="text-primary">Revisa los Test y valores vitales de tus Patients</span>
               </div>
 
               <div className="flex space-x-2 items-center text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width={18} height={13} fill="none">
                   <path fill="currentColor" d="M6.55 13 .85 7.3l1.425-1.425L6.55 10.15 15.725.975 17.15 2.4 6.55 13Z" />
                 </svg>
-                <span className="text-primary">Exporta como PDF las recetas e indicaciones</span>
+                <span className="text-primary">Exporta como PDF las recetas e Indications</span>
               </div>
 
               <div className="absolute bottom-6">

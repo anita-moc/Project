@@ -13,7 +13,7 @@ const Enter = ({ id, status }: { id: string; status: string }) => {
     <Link href={`/appointments/${id}`}>
       <Button className="h-9 gap-2" variant={'secondary'}>
         <Video className="size-4" />
-        Entrar a llamada
+        Enter call
       </Button>
     </Link>
   );

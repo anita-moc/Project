@@ -33,7 +33,7 @@ const DoctorCard = ({ doctor }: Props) => {
               />
             ))}
           </div>
-          <p className="text-sm text-muted-foreground">{doctor.experience} años</p>
+          <p className="text-sm text-muted-foreground">{doctor.experience} years</p>
         </div>
       </div>
     </Card>

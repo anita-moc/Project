@@ -5,7 +5,7 @@ import { BotCard } from '../messages';
 const vitalsData = {
   weight: {
     icon: <Scale className="w-5 h-5" />,
-    label: 'Peso',
+    label: 'Weight',
     unit: 'kg',
     normalRange: {
       label: '18.5-24.9 BMI',
@@ -16,7 +16,7 @@ const vitalsData = {
   },
   temperature: {
     icon: <Thermometer className="w-5 h-5" />,
-    label: 'Temperatura',
+    label: 'Temperature',
     unit: '°C',
     normalRange: {
       label: '36.1-37.2',
@@ -27,7 +27,7 @@ const vitalsData = {
   },
   bloodPressure: {
     icon: <Droplet className="w-5 h-5" />,
-    label: 'Presión arterial',
+    label: 'Blood pressure',
     unit: 'mmHg',
     normalRange: {
       label: '120/80',
@@ -38,8 +38,8 @@ const vitalsData = {
   },
   heartRate: {
     icon: <Heart className="w-5 h-5" />,
-    label: 'Ritmo cardiaco',
-    unit: 'ppm',
+    label: 'Heart rate',
+    unit: 'bpm',
     normalRange: {
       label: '60-100',
       min: 60,
@@ -49,7 +49,7 @@ const vitalsData = {
   },
   respiratoryRate: {
     icon: <Lungs className="w-5 h-5" />,
-    label: 'Frecuencia respiratoria',
+    label: 'Respiratory rate',
     unit: 'rpm',
     normalRange: {
       label: '12-20',
@@ -60,7 +60,7 @@ const vitalsData = {
   },
   oxygenSaturation: {
     icon: <Activity className="w-5 h-5" />,
-    label: 'Saturación de oxígeno',
+    label: 'Oxygen saturation',
     unit: '%',
     normalRange: {
       label: '95-100',
@@ -87,7 +87,7 @@ const AvgVitals = ({
 }) => {
   return (
     <BotCard>
-      <p className="text-md">Estos son los valores promedio de tus signos vitales</p>
+      <p className="text-md">These are the average values of your Vital signs</p>
       <div className="grid grid-cols-2 gap-4 w-2/3">
         <Tooltip>
           <TooltipTrigger>
@@ -111,7 +111,7 @@ const AvgVitals = ({
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Rango normal: {vitalsData.weight.normalRange.label}</p>
+            <p>Normal range: {vitalsData.weight.normalRange.label}</p>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
@@ -142,7 +142,7 @@ const AvgVitals = ({
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Rango normal: {vitalsData.temperature.normalRange.label}</p>
+            <p>Normal range: {vitalsData.temperature.normalRange.label}</p>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
@@ -173,7 +173,7 @@ const AvgVitals = ({
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Rango normal: {vitalsData.bloodPressure.normalRange.label}</p>
+            <p>Normal range: {vitalsData.bloodPressure.normalRange.label}</p>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
@@ -202,7 +202,7 @@ const AvgVitals = ({
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Rango normal: {vitalsData.heartRate.normalRange.label}</p>
+            <p>Normal range: {vitalsData.heartRate.normalRange.label}</p>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
@@ -233,7 +233,7 @@ const AvgVitals = ({
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Rango normal: {vitalsData.respiratoryRate.normalRange.label}</p>
+            <p>Normal range: {vitalsData.respiratoryRate.normalRange.label}</p>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
@@ -264,7 +264,7 @@ const AvgVitals = ({
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Rango normal: {vitalsData.oxygenSaturation.normalRange.label}</p>
+            <p>Normal range: {vitalsData.oxygenSaturation.normalRange.label}</p>
           </TooltipContent>
         </Tooltip>
       </div>

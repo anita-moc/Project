@@ -11,7 +11,7 @@ type Props = {
 const Title = async ({ appointment, user }: Props) => {
   return (
     <div>
-      <h1 className="text-3xl font-bold">Consulta con</h1>
+      <h1 className="text-3xl font-bold">Consult with</h1>
       <div className="flex flex-start items-center gap-2">
         <Avatar className="h-8 w-8 rounded-full">
           <AvatarImage

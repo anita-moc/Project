@@ -9,27 +9,27 @@ import { Label, Pie, PieChart } from 'recharts';
 export const description = 'A donut chart with text';
 
 const chartData = [
-  { browser: 'Cita inicial', visitors: 30, fill: 'var(--color-chrome)' },
-  { browser: 'Revision', visitors: 27, fill: 'var(--color-safari)' },
-  { browser: 'Emergencia', visitors: 53, fill: 'var(--color-firefox)' },
+  { browser: 'Initial appointment', visitors: 30, fill: 'var(--color-chrome)' },
+  { browser: 'Review', visitors: 27, fill: 'var(--color-safari)' },
+  { browser: 'Emergency', visitors: 53, fill: 'var(--color-firefox)' },
   { browser: 'Control', visitors: 76, fill: 'var(--color-edge)' },
-  { browser: 'Cirugía', visitors: 5, fill: 'var(--color-other)' },
+  { browser: 'Surgery', visitors: 5, fill: 'var(--color-other)' },
 ];
 
 const chartConfig = {
   visitors: {
-    label: 'Citas',
+    label: 'Appointments',
   },
   chrome: {
-    label: 'Cita inicial',
+    label: 'Initial appointment',
     color: 'var(--chart-1)',
   },
   safari: {
-    label: 'Revision',
+    label: 'Review',
     color: 'var(--chart-2)',
   },
   firefox: {
-    label: 'Emergencia',
+    label: 'Emergency',
     color: 'var(--chart-3)',
   },
   edge: {
@@ -37,7 +37,7 @@ const chartConfig = {
     color: 'var(--chart-4)',
   },
   other: {
-    label: 'Cirugía',
+    label: 'Surgery',
     color: 'var(--chart-5)',
   },
 } satisfies ChartConfig;
@@ -50,8 +50,8 @@ export function AppointmentTypes() {
   return (
     <Card className="flex flex-col lg:col-span-1 rounded-lg  bg-secondary shadow-none">
       <CardHeader className="pb-0 text-left">
-        <CardTitle>Tipos de consulta</CardTitle>
-        <CardDescription>Enero - Octubre 2024</CardDescription>
+        <CardTitle>Types of consultation</CardTitle>
+        <CardDescription>January - October 2024</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer config={chartConfig} className="mx-auto aspect-square max-h-[250px]">
@@ -67,7 +67,7 @@ export function AppointmentTypes() {
                           {totalVisitors.toLocaleString()}
                         </tspan>
                         <tspan x={viewBox.cx} y={(viewBox.cy || 0) + 24} className="fill-muted-foreground">
-                          Citas
+                          Appointments
                         </tspan>
                       </text>
                     );
@@ -80,10 +80,10 @@ export function AppointmentTypes() {
       </CardContent>
       <CardFooter className="flex-col gap-2 text-sm">
         <div className="flex text-left w-full gap-2 font-medium leading-none">
-          Tendencia al alza en un 5.2% este mes <TrendingUp className="h-4 w-4" />
+          Uptrend of 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
         <div className="text-left w-full leading-none text-muted-foreground">
-          Mostrando el total de visitantes de los últimos 10 meses
+          Showing the total visitors for the last 10 months
         </div>
       </CardFooter>
     </Card>

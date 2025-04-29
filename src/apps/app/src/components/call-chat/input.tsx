@@ -48,7 +48,7 @@ const ChatInput = ({
               submit();
             }}
           >
-            Enviar mensaje
+            Send message
             <CornerDownLeft className="size-3.5" />
           </Button>
         </div>

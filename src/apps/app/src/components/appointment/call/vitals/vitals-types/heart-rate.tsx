@@ -22,7 +22,7 @@ export const HeartRateInfo = ({ value, toggle }: HearRateProps) => {
   return (
     <VitalSign
       icon={<Heart className="h-5 w-5" />}
-      label="Ritmo Cardíaco"
+      label="Heart Rate"
       value={value}
       unit="bpm"
       max={100}
@@ -33,7 +33,7 @@ export const HeartRateInfo = ({ value, toggle }: HearRateProps) => {
 };
 
 const formSchema = z.object({
-  heartRate: z.string().min(1, { message: 'Debe introducir un valor valido' }),
+  heartRate: z.string().min(1, { message: 'You must enter a valid value' }),
 });
 
 export const HeartRateForm = ({
@@ -60,10 +60,10 @@ export const HeartRateForm = ({
     try {
       await execute({ heartRate: Number(data.heartRate), appointmentId });
       toggle();
-      toast.success('Signos vitales guardados correctamente');
+      toast.success('Vital signs saved correctly');
       router.refresh();
     } catch (error) {
-      toast.error('Error al guardar los signos vitales');
+      toast.error('Error saving vital signs');
     }
   };
 
@@ -80,7 +80,7 @@ export const HeartRateForm = ({
           render={({ field }) => (
             <FormItem className="border p-4 my-0 h-full rounded-xl">
               <FormLabel className="text-sm flex justify-between">
-                Frecuencia cardíaca
+              Heart rate
                 <div onClick={toggle} className="cursor-pointer">
                   <X className="size-4" />
                 </div>
@@ -97,7 +97,7 @@ export const HeartRateForm = ({
                     disabled={form.formState.isSubmitting}
                     className="rounded-l-none p-0 px-2 h-10"
                   >
-                    {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar '}
+                    {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Keep '}
                   </Button>
                 </div>
               </FormControl>

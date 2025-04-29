@@ -18,7 +18,7 @@ const OrdersSheet = async ({ data }: Props) => {
       <SheetTrigger asChild>
         <Button className="gap-2" variant={'outline'}>
           <ScrollText className="size-4" />
-          Ordenes
+          Orders
         </Button>
       </SheetTrigger>
       <SheetContent className="sm:w-1/3 sm:max-w-full p-4 bg-transparent border-none focus-visible:outline-none">
@@ -26,9 +26,9 @@ const OrdersSheet = async ({ data }: Props) => {
           <SheetHeader className="flex flex-row justify-between items-center gap-4 border-b mb-3">
             <div className="flex flex-row justify-between w-full items-center gap-4">
               <div className="flex flex-col gap-2 py-2">
-                <SheetTitle className="text-xl">Ordenes medicas</SheetTitle>
+                <SheetTitle className="text-xl">Medical orders</SheetTitle>
                 <p className="text-muted-foreground text-xs">
-                  Agregar orden para el paciente{' '}
+                Add order for patient{' '}
                   <span className="font-bold capitalize">{data?.patient?.user?.name}</span>
                 </p>
               </div>
@@ -41,7 +41,8 @@ const OrdersSheet = async ({ data }: Props) => {
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent className="rounded-none">
-                    <p>Ir todas las ordenes del paciente</p>
+                    <p>Go through all the patient's orders
+                    </p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>

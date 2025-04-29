@@ -34,26 +34,25 @@ const Finalize = () => {
       <DialogTrigger asChild>
         <Button variant={'outline'} className="gap-2">
           <CircleCheck />
-          Finalizar
+          End
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Finalizar llamada</DialogTitle>
+          <DialogTitle>End Call</DialogTitle>
         </DialogHeader>
         <div>
           <p className="text-muted-foreground text-sm mt-5">
-            Estas a punto de finalizar la llamada. Una vez que lo hagas, no podrás volver a acceder a esta consulta.
-          </p>
+          You're about to end the call. Once you do, you won't be able to access this consultation again.</p>
         </div>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
             <Button type="button" variant="secondary">
-              Cancelar
+              Cancel
             </Button>
           </DialogClose>
           <Button type="button" className="bg-emerald-400 text-white hover:text-background" onClick={finalizeCall}>
-            Finalizar
+            End
           </Button>
         </DialogFooter>
       </DialogContent>

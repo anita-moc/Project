@@ -21,9 +21,21 @@ import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Lottie from 'react-lottie';
 import { toast } from 'sonner';
 import { z } from 'zod';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
+
+// Create a mutable copy of the animation data
+const defaultOptions = {
+  animationData: JSON.parse(JSON.stringify(successAnimation)),
+  autoplay: true,
+  loop: false,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
 
 const formSchema = z.object({
   demographic: z.object({
@@ -85,20 +97,20 @@ const PatientForm = ({ userId }: { userId: string }) => {
         <form action="" className="w-full" onSubmit={form.handleSubmit(onSubmit)}>
           <Card className="border-none shadow-none w-full">
             <CardHeader>
-              <CardTitle>Bienvenido</CardTitle>
+              <CardTitle>Welcome</CardTitle>
               <CardDescription>
-                Por favor, completa los siguientes campos para continuar con el proceso de registro
+              Please complete the following fields to continue with the Records process
               </CardDescription>
             </CardHeader>
             <CardContent className="k">
-              <Label className="font-semibold text-xl my-3">Datos demográficos</Label>
+              <Label className="font-semibold text-xl my-3">Demographics</Label>
               <div className="flex items-center w-full gap-3">
                 <FormField
                   control={form.control}
                   name="demographic.civilStatus"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel className="text-sm">Estado civil</FormLabel>
+                      <FormLabel className="text-sm">Status civil</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="rounded-none">
@@ -122,7 +134,7 @@ const PatientForm = ({ userId }: { userId: string }) => {
                   name="demographic.educativeLevel"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel className="text-sm">Educación</FormLabel>
+                      <FormLabel className="text-sm">Education</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="rounded-none">
@@ -155,14 +167,14 @@ const PatientForm = ({ userId }: { userId: string }) => {
                   )}
                 />
               </div>
-              <Label className="font-semibold text-xl my-3">Datos medicos</Label>
+              <Label className="font-semibold text-xl my-3">Medical data</Label>
               <div className="flex items-center w-full gap-3">
                 <FormField
                   control={form.control}
                   name="biometric.bloodType"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel className="text-sm">Tipo de sangre</FormLabel>
+                      <FormLabel className="text-sm">Blood type</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="rounded-none">
@@ -186,7 +198,7 @@ const PatientForm = ({ userId }: { userId: string }) => {
                   name="biometric.organDonor"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel className="text-sm">Donador de órganos?</FormLabel>
+                      <FormLabel className="text-sm">organ donor?</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="rounded-none">
@@ -210,7 +222,7 @@ const PatientForm = ({ userId }: { userId: string }) => {
                   name="biometric.height"
                   render={({ field }) => (
                     <FormItem className="my-2">
-                      <FormLabel className="text-sm">Altura</FormLabel>
+                      <FormLabel className="text-sm">Height</FormLabel>
                       <FormControl>
                         <Input {...field} type="number" className="rounded-none"></Input>
                       </FormControl>
@@ -223,7 +235,7 @@ const PatientForm = ({ userId }: { userId: string }) => {
             <CardFooter>
               <div className="grid w-full gap-y-4">
                 <Button type="submit" className="rounded-none">
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Continuar'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Continue'}
                 </Button>
               </div>
             </CardFooter>
@@ -233,20 +245,13 @@ const PatientForm = ({ userId }: { userId: string }) => {
       <AlertDialog open={showSuccessModal}>
         <AlertDialogContent className="sm:rounded-none">
           <Lottie
-            options={{
-              autoplay: true,
-              loop: false,
-              animationData: successAnimation,
-              rendererSettings: {
-                preserveAspectRatio: 'xMidYMid slice',
-              },
-            }}
+            options={defaultOptions}
             style={{ width: 300, height: 300 }}
-          ></Lottie>
+          />
           <AlertDialogHeader className="my-0">
-            <AlertDialogTitle className="text-center text-2xl">Verificado!</AlertDialogTitle>
+            <AlertDialogTitle className="text-center text-2xl">Verified!</AlertDialogTitle>
             <AlertDialogDescription className="text-center text-lg">
-              Has completado el proceso de registro exitosamente
+              You have successfully completed the Records process
             </AlertDialogDescription>
           </AlertDialogHeader>
 
@@ -260,7 +265,7 @@ const PatientForm = ({ userId }: { userId: string }) => {
                 size="lg"
                 className="rounded-none"
               >
-                Ir al inicio
+                Go To Dashboard
               </Button>
             </AlertDialogAction>
           </AlertDialogFooter>
@@ -321,37 +326,38 @@ const bloodTypeOptions = [
 const civilStatusOptions = [
   {
     id: 'SINGLE',
-    name: 'Soltero/a',
+    name: 'Single',
   },
   {
     id: 'MARRIED',
-    name: 'Casado/a',
+    name: 'Married',
   },
   {
     id: 'DIVORCED',
-    name: 'Divorciado/a',
+    name: 'Divorced',
   },
   {
     id: 'WIDOWED',
-    name: 'Viudo/a',
+    name: 'Widowed',
   },
 ];
+
 
 const educationLevels = [
   {
     id: 'PRIMARY',
-    name: 'Primaria',
+    name: 'Primary',
   },
   {
     id: 'SECONDARY',
-    name: 'Secundaria',
+    name: 'Secondary',
   },
   {
     id: 'TECHNICAL',
-    name: 'Técnico',
+    name: 'Technical',
   },
   {
     id: 'UNIVERSITY',
-    name: 'Universitario',
+    name: 'University',
   },
 ];

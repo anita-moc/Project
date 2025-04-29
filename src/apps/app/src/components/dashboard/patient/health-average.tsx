@@ -8,21 +8,21 @@ import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
 export const description = 'A bar chart';
 
 const chartData = [
-  { month: 'Enero', rate: 186 },
-  { month: 'Febrero', rate: 305 },
-  { month: 'Marzo', rate: 237 },
-  { month: 'Abril', rate: 73 },
-  { month: 'Mayo', rate: 209 },
-  { month: 'Junio', rate: 214 },
-  { month: 'Julio', rate: 128 },
-  { month: 'Agosto', rate: 345 },
-  { month: 'Septiembre', rate: 64 },
-  { month: 'Octubre', rate: 186 },
+  { month: 'January', rate: 186 },
+  { month: 'February', rate: 305 },
+  { month: 'March', rate: 237 },
+  { month: 'April', rate: 73 },
+  { month: 'May', rate: 209 },
+  { month: 'June', rate: 214 },
+  { month: 'July', rate: 128 },
+  { month: 'August', rate: 345 },
+  { month: 'September', rate: 64 },
+  { month: 'October', rate: 186 },
 ];
 
 const chartConfig = {
   rate: {
-    label: 'Promedio',
+    label: 'Average',
     color: 'hsl(var(--chart-1))',
   },
 } satisfies ChartConfig;
@@ -31,8 +31,8 @@ export function HealthAverage() {
   return (
     <Card className="rounded-none col-span-1">
       <CardHeader>
-        <CardTitle>Promedio de salud por mes</CardTitle>
-        <CardDescription>Enero - Octubre 2024</CardDescription>
+        <CardTitle>Health Average per Month</CardTitle>
+        <CardDescription>January - October 2024</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -52,9 +52,9 @@ export function HealthAverage() {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 font-medium leading-none">
-          Tendencia al alza en un 5.2% este mes <TrendingUp className="h-4 w-4" />
+          Upward trend of 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
-        <div className="leading-none text-muted-foreground">Mostrando el promedio de tu progreso en salud</div>
+        <div className="leading-none text-muted-foreground">Showing the average of your health progress</div>
       </CardFooter>
     </Card>
   );

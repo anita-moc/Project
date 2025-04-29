@@ -34,7 +34,7 @@ export const OccupationSection = ({ occupation, id }: OccupationValue & { id: st
     try {
       await updateDemographic({ patientId: id, demographic: data });
       setIsEditing(false);
-      toast.success('Ocupación actualizada correctamente');
+      toast.success('Occupation updated successfully');
       router.refresh();
     } catch (error) {
       console.log(error);
@@ -48,9 +48,9 @@ export const OccupationSection = ({ occupation, id }: OccupationValue & { id: st
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Ocupación</CardTitle>
+              <CardTitle>Ocupation</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                {isEditing ? 'Ingresa tu ocupación. Este dato es público.' : 'Tu ocupación es pública.'}
+                {isEditing ? 'Enter your occupation. This information is public.': 'Your occupation is public.'}
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{form.getValues('occupation')}</p>
@@ -72,7 +72,7 @@ export const OccupationSection = ({ occupation, id }: OccupationValue & { id: st
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              Esta información ayuda a proporcionar una mejor atención médica.
+            This information helps provide better medical care.
             </p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
@@ -83,7 +83,7 @@ export const OccupationSection = ({ occupation, id }: OccupationValue & { id: st
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -91,7 +91,7 @@ export const OccupationSection = ({ occupation, id }: OccupationValue & { id: st
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>
@@ -104,18 +104,18 @@ export const OccupationSection = ({ occupation, id }: OccupationValue & { id: st
 const civilStatusOptions = [
   {
     id: 'SINGLE',
-    name: 'Soltero/a',
+    name: 'Single/a',
   },
   {
     id: 'MARRIED',
-    name: 'Casado/a',
+    name: 'Married/a',
   },
   {
     id: 'DIVORCED',
-    name: 'Divorciado/a',
+    name: 'Divorced/a',
   },
   {
     id: 'WIDOWED',
-    name: 'Viudo/a',
+    name: 'Widowed/a',
   },
 ];

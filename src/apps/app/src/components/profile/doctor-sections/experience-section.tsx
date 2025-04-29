@@ -51,9 +51,9 @@ export const ExperienceSection = ({ experience, id }: ExperienceValue & { id: st
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Tiempo de experiencia</CardTitle>
+              <CardTitle>Experience time</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                Este es el tiempo que llevas trabajando en tu profesión.
+              This is how long you have been working in your profession.
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{form.getValues('experience')}</p>
@@ -74,7 +74,8 @@ export const ExperienceSection = ({ experience, id }: ExperienceValue & { id: st
             </div>
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
-            <p className="text-muted-foreground text-xs">La medida en años de tu experiencia.</p>
+            <p className="text-muted-foreground text-xs">
+            The measure in years of your experience.</p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
                 <Button
@@ -84,7 +85,7 @@ export const ExperienceSection = ({ experience, id }: ExperienceValue & { id: st
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -92,7 +93,7 @@ export const ExperienceSection = ({ experience, id }: ExperienceValue & { id: st
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>

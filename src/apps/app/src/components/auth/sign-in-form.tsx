@@ -60,10 +60,10 @@ export default function SignInForm() {
         <form action="" className="w-full" onSubmit={form.handleSubmit(onSubmit)}>
           <Card className="border-none shadow-none w-full">
             <CardHeader>
-              <CardTitle>Hola de nuevo!! :D</CardTitle>
+              <CardTitle>Hello again!! </CardTitle>
               <CardDescription>
-                Helsa es una plataforma que te ayuda a mantener un seguimiento de tu salud. Comienza creando una cuenta.
-              </CardDescription>
+              Gonurse is a platform that helps you keep track of your health. Get started by creating an account.
+               </CardDescription>
             </CardHeader>
             <CardContent className="">
               <FormField
@@ -84,7 +84,7 @@ export default function SignInForm() {
                 name="password"
                 render={({ field }) => (
                   <FormItem className="my-2">
-                    <FormLabel className="text-sm  font-bold">Contraseña</FormLabel>
+                    <FormLabel className="text-sm  font-bold">Password</FormLabel>
                     <FormControl>
                       <PasswordInput {...field} autoComplete="current-password" className=""></PasswordInput>
                     </FormControl>
@@ -109,13 +109,13 @@ export default function SignInForm() {
             <CardFooter>
               <div className="grid w-full">
                 <Button type="submit" disabled={isSubmitting} className="">
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Iniciar sesión'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Login'}
                 </Button>
                 <Button variant="link" size="sm">
-                  <Link href="/sign-up">¿No tienes una cuenta? Crea una</Link>
+                  <Link href="/sign-up">Don't have an account? Create one</Link>
                 </Button>
                 <Button variant="link" size="sm">
-                  <Link href="/recovery-password">¿Olvidaste tu contraseña? Recupérala aquí</Link>
+                  <Link href="/recovery-password">Forgot your password? Recover it here</Link>
                 </Button>
               </div>
             </CardFooter>

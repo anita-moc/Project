@@ -9,7 +9,7 @@ const BloodPressure = () => {
         <HeartPulse />
       </CardHeader>
       <CardContent>
-        <p className="text-xs text-muted-foreground">Presión sanguínea</p>
+        <p className="text-xs text-muted-foreground">Blood Pressure</p>
       </CardContent>
     </Card>
   );

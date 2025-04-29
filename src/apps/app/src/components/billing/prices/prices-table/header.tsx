@@ -19,8 +19,8 @@ export function Header({ onOpenChange, table }: Props) {
         onChange={(event) => table?.getColumn('name')?.setFilterValue(event.target.value)}
         className="max-w-sm rounded-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
       />
-      <Button className="h-9" variant={'secondary'} onClick={() => onOpenChange?.(true)}>
-        Crear tus tarifas
+      <Button className="h-9" variant={'secondary'} onClick={() => onOpenChange?.(true)}>  
+Create your rates
       </Button>
     </div>
   );

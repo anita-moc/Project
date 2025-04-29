@@ -55,11 +55,11 @@ export const EditPriceModal = ({ defaultValue, id, isOpen, onOpenChange, doctorI
   const createType = useAction(savePrice, {
     onSuccess: () => {
       onOpenChange(false);
-      toast.success('Tarifa actualizada');
+      toast.success('Updated rate');
       router.refresh();
     },
     onError: () => {
-      toast.error('Error al actualizar la tarifa');
+      toast.error('Error updating the rate');
     },
   });
   const form = useForm({
@@ -88,7 +88,7 @@ export const EditPriceModal = ({ defaultValue, id, isOpen, onOpenChange, doctorI
       <DialogContent className="max-w-[455px] sm:rounded-none">
         <div className="p-4">
           <DialogHeader>
-            <DialogTitle>Edición de tarifa</DialogTitle>
+            <DialogTitle>Rate editing</DialogTitle>
           </DialogHeader>
 
           <Form {...form}>
@@ -103,7 +103,7 @@ export const EditPriceModal = ({ defaultValue, id, isOpen, onOpenChange, doctorI
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Precio"
+                            placeholder="Price"
                             className="rounded-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                           />
                         </FormControl>
@@ -118,7 +118,7 @@ export const EditPriceModal = ({ defaultValue, id, isOpen, onOpenChange, doctorI
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Precio"
+                            placeholder="Price"
                             className="rounded-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                             type="number"
                           />
@@ -135,7 +135,7 @@ export const EditPriceModal = ({ defaultValue, id, isOpen, onOpenChange, doctorI
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="w-full rounded-none focus:outline-none focus:ring-0 focus:ring-transparent">
-                              <SelectValue placeholder="Moneda" />
+                              <SelectValue placeholder="Currency" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="rounded-none">
@@ -162,7 +162,7 @@ export const EditPriceModal = ({ defaultValue, id, isOpen, onOpenChange, doctorI
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="w-full rounded-none focus:outline-none focus:ring-0 focus:ring-transparent">
-                              <SelectValue placeholder="Tipo de consulta" />
+                              <SelectValue placeholder="Query type" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="rounded-none">
@@ -188,7 +188,7 @@ export const EditPriceModal = ({ defaultValue, id, isOpen, onOpenChange, doctorI
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="w-full rounded-none focus:outline-none focus:ring-0 focus:ring-transparent">
-                              <SelectValue placeholder="Duración" />
+                              <SelectValue placeholder="Duration" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="rounded-none">

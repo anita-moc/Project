@@ -9,7 +9,7 @@ const Glucose = () => {
         <Beaker />
       </CardHeader>
       <CardContent>
-        <p className="text-xs text-muted-foreground">Glucosa en sangre</p>
+        <p className="text-xs text-muted-foreground">Blood glucose</p>
       </CardContent>
     </Card>
   );

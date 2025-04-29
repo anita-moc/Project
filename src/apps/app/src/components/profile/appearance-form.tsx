@@ -13,18 +13,18 @@ export function AppearanceForm() {
   return (
     <Card className="rounded-none">
       <CardHeader>
-        <CardTitle>Tema</CardTitle>
-        <p className="text-muted-foreground text-sm mt-5">Personaliza la apariencia de la aplicación.</p>
+        <CardTitle>Issue</CardTitle>
+        <p className="text-muted-foreground text-sm mt-5">Customize the appearance of the application.</p>
         <Select defaultValue={theme} onValueChange={changeTheme}>
           <SelectTrigger className="rounded-none w-1/2 p-2">
             <SelectValue placeholder="select" />
           </SelectTrigger>
           <SelectContent className="rounded-none">
             <SelectItem value={'light'} className="">
-              Claro
+              Clear
             </SelectItem>
-            <SelectItem value={'dark'}>Oscuro</SelectItem>
-            <SelectItem value={'system'}>Sistema</SelectItem>
+            <SelectItem value={'dark'}>Dark</SelectItem>
+            <SelectItem value={'system'}>System</SelectItem>
           </SelectContent>
         </Select>
       </CardHeader>

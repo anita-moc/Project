@@ -57,11 +57,11 @@ const DiagnosisForm = ({ pathologies, toggle, symptoms, appointment }: Props) =>
         appointmentId: appointment.id,
         pathologyId: pathologies.find((d) => d.name === values.diagnosis)?.id!,
       });
-      toast.success('Diagnostico agregado correctamente');
+      toast.success('Diagnosis added successfully');
       toggle();
     } catch (error) {
       console.log(error);
-      toast.error('Error al agregar diagnostico');
+      toast.error('Error adding diagnosis');
     }
   };
   return (
@@ -73,7 +73,7 @@ const DiagnosisForm = ({ pathologies, toggle, symptoms, appointment }: Props) =>
             name="type"
             render={({ field }) => (
               <FormItem className="">
-                <FormLabel className="text-sm">Tipo de diagnostico</FormLabel>
+                <FormLabel className="text-sm">Type of diagnosis</FormLabel>
                 <FormControl>
                   <RadioGroup
                     onValueChange={field.onChange}
@@ -84,19 +84,19 @@ const DiagnosisForm = ({ pathologies, toggle, symptoms, appointment }: Props) =>
                       <FormControl>
                         <RadioGroupItem value="ALLERGY" />
                       </FormControl>
-                      <FormLabel className="font-normal">Alergia</FormLabel>
+                      <FormLabel className="font-normal">Allergy</FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center p-3 gap-3 border flex-1 space-y-0 rounded-lg">
                       <FormControl>
                         <RadioGroupItem value="DISEASE" />
                       </FormControl>
-                      <FormLabel className="font-normal">Enfermedad</FormLabel>
+                      <FormLabel className="font-normal">Disease</FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center p-3 gap-3 border flex-1 space-y-0 rounded-lg">
                       <FormControl>
                         <RadioGroupItem value="CHRONIC_DISEASE" />
                       </FormControl>
-                      <FormLabel className="font-normal">Crónica</FormLabel>
+                      <FormLabel className="font-normal">Chronic</FormLabel>
                     </FormItem>
                   </RadioGroup>
                 </FormControl>
@@ -114,7 +114,7 @@ const DiagnosisForm = ({ pathologies, toggle, symptoms, appointment }: Props) =>
               );
             }}
             options={(symptoms || []).map(transformOption)}
-            placeholder="Síntomas presentes relacionados"
+            placeholder="Related present symptoms"
           />
           <div className="flex items-center gap-2 flex-wrap my-3">
             {selectedSymptoms.map((symptom, index) => (
@@ -133,14 +133,14 @@ const DiagnosisForm = ({ pathologies, toggle, symptoms, appointment }: Props) =>
             name="diagnosis"
             render={({ field }) => (
               <FormItem className="">
-                <FormLabel className="text-sm">Diagnostico</FormLabel>
+                <FormLabel className="text-sm">Diagnosis</FormLabel>
                 <FormControl>
                   <Combobox
                     onChange={(v) => {
                       field.onChange({ target: { value: v } });
                     }}
                     options={pathologies.map(transformOption)}
-                    placeholder="Diagnostico"
+                    placeholder="Diagnosis"
                     value={field.value}
                   />
                 </FormControl>
@@ -153,7 +153,7 @@ const DiagnosisForm = ({ pathologies, toggle, symptoms, appointment }: Props) =>
             name="notes"
             render={({ field }) => (
               <FormItem className="">
-                <FormLabel className="text-sm">Notas adicionales</FormLabel>
+                <FormLabel className="text-sm">Additional Notes</FormLabel>
                 <FormControl>
                   <Textarea {...field} className=""></Textarea>
                 </FormControl>
@@ -164,10 +164,10 @@ const DiagnosisForm = ({ pathologies, toggle, symptoms, appointment }: Props) =>
         </div>
         <div className="flex w-full gap-3">
           <Button onClick={toggle} className="flex-1">
-            Cancelar
+            Cancel
           </Button>
           <Button type="submit" disabled={form.formState.isSubmitting} className="flex-1">
-            {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar diagnostico'}
+            {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save Diagnosis'}
           </Button>
         </div>
       </form>

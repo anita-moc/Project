@@ -34,7 +34,7 @@ export const BloodTypeSection = ({ bloodType, id }: BloodTypeLevel & { id: strin
     try {
       await updateBiometric({ patientId: id, biometric: data });
       setIsEditing(false);
-      toast.success('Tipo de sangre actualizado correctamente.');
+      toast.success('Blood type actualizado correctamente.');
       router.refresh();
     } catch (error) {
       console.log(error);
@@ -50,9 +50,9 @@ export const BloodTypeSection = ({ bloodType, id }: BloodTypeLevel & { id: strin
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Tipo de sangre</CardTitle>
+              <CardTitle>Blood type</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                {isEditing ? 'Selecciona tu tipo de sangre.' : 'Tu tipo de sangre es importante para nosotros'}
+                {isEditing ? 'Select your Blood type.' : 'Your blood type is important to us'}
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{bloodTypeSelected?.name}</p>
@@ -85,8 +85,7 @@ export const BloodTypeSection = ({ bloodType, id }: BloodTypeLevel & { id: strin
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              Esta información es importante para nosotros, por favor mantenla actualizada.
-            </p>
+            This information is important to us, please keep it updated.</p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
                 <Button
@@ -96,15 +95,15 @@ export const BloodTypeSection = ({ bloodType, id }: BloodTypeLevel & { id: strin
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Keep'}
                 </Button>
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+                Edit
               </Button>
             )}
           </CardFooter>

@@ -10,24 +10,24 @@ export const description = 'A donut chart with text';
 
 const chartData = [
   { activity: 'Cardio', activities: 30, fill: 'hsl(var(--chart-1))' },
-  { activity: 'Fuerza', activities: 27, fill: 'hsl(var(--chart-2))' },
-  { activity: 'Meditación', activities: 53, fill: 'hsl(var(--chart-3))' },
+  { activity: 'Strength', activities: 27, fill: 'hsl(var(--chart-2))' },
+  { activity: 'Meditation', activities: 53, fill: 'hsl(var(--chart-3))' },
 ];
 
 const chartConfig = {
   activities: {
-    label: 'Actividades',
+    label: 'Activities',
   },
   chrome: {
     label: 'Cardio',
     color: 'hsl(var(--chart-1))',
   },
   safari: {
-    label: 'Fuerza',
+    label: 'Strength',
     color: 'hsl(var(--chart-2))',
   },
   firefox: {
-    label: 'Meditación',
+    label: 'Meditation',
     color: 'hsl(var(--chart-3))',
   },
 } satisfies ChartConfig;
@@ -40,8 +40,8 @@ export function Activities() {
   return (
     <Card className="flex flex-col rounded-none md:col-span-1">
       <CardHeader className="pb-0 text-left">
-        <CardTitle>Actividad</CardTitle>
-        <CardDescription>Enero - Octubre 2024</CardDescription>
+        <CardTitle>Activity</CardTitle>
+        <CardDescription>January - October 2024</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer config={chartConfig} className="mx-auto aspect-square max-h-[250px]">
@@ -57,7 +57,7 @@ export function Activities() {
                           {totalVisitors.toLocaleString()}
                         </tspan>
                         <tspan x={viewBox.cx} y={(viewBox.cy || 0) + 24} className="fill-muted-foreground">
-                          Actividades
+                          Activities
                         </tspan>
                       </text>
                     );
@@ -70,10 +70,10 @@ export function Activities() {
       </CardContent>
       <CardFooter className="flex-col gap-2 text-sm">
         <div className="flex text-left w-full gap-2 font-medium leading-none">
-          Tendencia al alza en un 5.2% este mes <TrendingUp className="h-4 w-4" />
+          Uptrend of 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
         <div className="text-left w-full leading-none text-muted-foreground">
-          Mostrando el total tipos de actividades realizadas este mes
+          Showing the total types of activities performed this month
         </div>
       </CardFooter>
     </Card>

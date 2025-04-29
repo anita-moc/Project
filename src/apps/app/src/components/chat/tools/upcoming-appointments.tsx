@@ -12,15 +12,15 @@ type Props = {
 export const UpcomingAppointments = ({ data }: Props) => {
   return (
     <BotCard className="space-y-4">
-      {data.length > 0 && <p className="text-md">Encontré {data.length} próximas citas medicas agendadas </p>}
+      {data.length > 0 && <p className="text-md">I found {data.length} upcoming medical appointments schedules</p>}
       {data.length > 0 && (
         <Table className="">
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[15%] h-10">Tipo de consulta</TableHead>
+              <TableHead className="w-[15%] h-10">Query type</TableHead>
               <TableHead className="h-10 min-w-[80px]">Doctor</TableHead>
-              <TableHead className="h-10">Fecha</TableHead>
-              <TableHead className="h-10 text-right w-[35%]">Motivo</TableHead>
+              <TableHead className="h-10">Date</TableHead>
+              <TableHead className="h-10 text-right w-[35%]">Reason</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

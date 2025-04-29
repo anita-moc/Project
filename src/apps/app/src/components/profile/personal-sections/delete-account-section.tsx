@@ -41,10 +41,10 @@ export const DeleteAccountSection = () => {
     <Card className="rounded-none bg-transparent border-destructive">
       <CardHeader className="">
         <div>
-          <CardTitle>Eliminar cuenta</CardTitle>
+          <CardTitle>Delete account</CardTitle>
           <p className="text-muted-foreground text-sm mt-5">
-            Elimina permanentemente tu cuenta personal y todo su contenido de la plataforma Midday. Esta acción no es
-            reversible, así que por favor continúa con precaución.
+          Permanently delete your personal account and all its content from the Midday platform. 
+          This action is not reversible, so please proceed with caution
           </p>
         </div>
       </CardHeader>
@@ -52,22 +52,22 @@ export const DeleteAccountSection = () => {
         <AlertDialog>
           <AlertDialogTrigger asChild>
             <Button className="rounded-none" variant="destructive">
-              Eliminar
+              Delete
             </Button>
           </AlertDialogTrigger>
           <AlertDialogContent className="sm:rounded-none ">
             <AlertDialogHeader>
-              <AlertDialogTitle className="">Cuidado!</AlertDialogTitle>
+              <AlertDialogTitle className="">Careful!</AlertDialogTitle>
               <AlertDialogDescription className="">
-                ¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.
-              </AlertDialogDescription>
+              Are you sure you want to delete your account? This action cannot be undone.
+               </AlertDialogDescription>
             </AlertDialogHeader>
             <div className="flex flex-col gap-4">
               <label htmlFor="">Password</label>
               <PasswordInput className="rounded-none" onChange={(e) => setPassword(e.target.value)} />
             </div>
             <AlertDialogFooter className="flex w-full justify-end items-center">
-              <AlertDialogCancel className="rounded-none max-sm:w-full">Cancelar</AlertDialogCancel>
+              <AlertDialogCancel className="rounded-none max-sm:w-full">Cancel</AlertDialogCancel>
               <AlertDialogAction asChild className="bg-destructive text-primary">
                 <Button
                   variant="destructive"
@@ -75,7 +75,7 @@ export const DeleteAccountSection = () => {
                   onClick={onSubmit}
                   disabled={isSubmitting || password === ''}
                 >
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Eliminar cuenta'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Delete account'}
                 </Button>
               </AlertDialogAction>
             </AlertDialogFooter>

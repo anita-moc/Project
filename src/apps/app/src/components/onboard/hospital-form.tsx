@@ -19,12 +19,15 @@ import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Lottie from 'react-lottie';
 import { toast } from 'sonner';
 import { z } from 'zod';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
+
 
 const formSchema = z.object({
-  name: z.string().min(3, { message: 'El nombre debe tener al menos 3 caracteres' }),
+  name: z.string().min(3, { message: 'The Name must have at least 3 characters' }),
   street: z.string().optional(),
   city: z.string().optional(),
   country: z.string().optional(),
@@ -78,9 +81,9 @@ const HospitalForm = ({ userId }: { userId: string }) => {
         <form action="" className="w-full" onSubmit={form.handleSubmit(onSubmit)}>
           <Card className="border-none shadow-none w-full">
             <CardHeader>
-              <CardTitle>Bienvenido</CardTitle>
+              <CardTitle>Welcome</CardTitle>
               <CardDescription>
-                Por favor, completa los siguientes campos para continuar con el proceso de registro
+              Please complete the following fields to continue with the Records process
               </CardDescription>
             </CardHeader>
             <CardContent className="k">
@@ -89,7 +92,7 @@ const HospitalForm = ({ userId }: { userId: string }) => {
                 name="name"
                 render={({ field }) => (
                   <FormItem className="my-2">
-                    <FormLabel className="text-sm">Dirección</FormLabel>
+                    <FormLabel className="text-sm">Address 1</FormLabel>
                     <FormControl>
                       <Input {...field} className="rounded-none"></Input>
                     </FormControl>
@@ -103,7 +106,7 @@ const HospitalForm = ({ userId }: { userId: string }) => {
                   name="street"
                   render={({ field }) => (
                     <FormItem className="my-2 flex-1">
-                      <FormLabel className="text-sm">Dirección</FormLabel>
+                      <FormLabel className="text-sm">Address</FormLabel>
                       <FormControl>
                         <Input {...field} className="rounded-none"></Input>
                       </FormControl>
@@ -116,7 +119,7 @@ const HospitalForm = ({ userId }: { userId: string }) => {
                   name="city"
                   render={({ field }) => (
                     <FormItem className="my-2 flex-1">
-                      <FormLabel className="text-sm">Ciudad</FormLabel>
+                      <FormLabel className="text-sm">City</FormLabel>
                       <FormControl>
                         <Input {...field} className="rounded-none"></Input>
                       </FormControl>
@@ -131,7 +134,8 @@ const HospitalForm = ({ userId }: { userId: string }) => {
                   name="country"
                   render={({ field }) => (
                     <FormItem className="my-2 flex-1">
-                      <FormLabel className="text-sm">País</FormLabel>
+                      <FormLabel className="text-sm">
+                      Country</FormLabel>
                       <FormControl>
                         <Input {...field} className="rounded-none"></Input>
                       </FormControl>
@@ -144,7 +148,7 @@ const HospitalForm = ({ userId }: { userId: string }) => {
                   name="zipCode"
                   render={({ field }) => (
                     <FormItem className="my-2 flex-1">
-                      <FormLabel className="text-sm">Código postal</FormLabel>
+                      <FormLabel className="text-sm">Zip code</FormLabel>
                       <FormControl>
                         <Input {...field} type="number" className="rounded-none"></Input>
                       </FormControl>
@@ -157,7 +161,7 @@ const HospitalForm = ({ userId }: { userId: string }) => {
             <CardFooter>
               <div className="grid w-full gap-y-4">
                 <Button type="submit" className="rounded-none">
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Continuar'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Continue'}
                 </Button>
               </div>
             </CardFooter>
@@ -178,9 +182,9 @@ const HospitalForm = ({ userId }: { userId: string }) => {
             style={{ width: 300, height: 300 }}
           ></Lottie>
           <AlertDialogHeader className="my-0">
-            <AlertDialogTitle className="text-center text-2xl">Verificado!</AlertDialogTitle>
+            <AlertDialogTitle className="text-center text-2xl">Verified!</AlertDialogTitle>
             <AlertDialogDescription className="text-center text-lg">
-              Has completado el proceso de registro exitosamente
+              You have successfully completed the Records process
             </AlertDialogDescription>
           </AlertDialogHeader>
 
@@ -194,7 +198,7 @@ const HospitalForm = ({ userId }: { userId: string }) => {
                 size="lg"
                 className="rounded-none"
               >
-                Ir al inicio
+                Go To Dashboard
               </Button>
             </AlertDialogAction>
           </AlertDialogFooter>

@@ -85,10 +85,10 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
         status: 'IN_PROGRESS',
         id: v4(),
       });
-      toast.success('Tratamiento guardado');
+      toast.success('Saved treatment');
       toggle();
     } catch (error) {
-      toast.error('Error al guardar el tratamiento');
+      toast.error('Error saving treatment');
     }
   };
   return (
@@ -104,7 +104,7 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
             name="type"
             render={({ field }) => (
               <FormItem className="">
-                <FormLabel className="text-sm">Tipo de tratamiento</FormLabel>
+                <FormLabel className="text-sm">Type of treatment</FormLabel>
                 <FormControl>
                   <RadioGroup
                     onValueChange={field.onChange}
@@ -115,19 +115,19 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
                       <FormControl>
                         <RadioGroupItem value="MEDICATION" />
                       </FormControl>
-                      <FormLabel className="font-normal">Medicina</FormLabel>
+                      <FormLabel className="font-normal">Medicine</FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center p-3 gap-3 border flex-1 space-y-0 rounded-lg">
                       <FormControl>
                         <RadioGroupItem value="THERAPY" />
                       </FormControl>
-                      <FormLabel className="font-normal">Terapia</FormLabel>
+                      <FormLabel className="font-normal">Therapy</FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center p-3 gap-3 border flex-1 space-y-0 rounded-lg">
                       <FormControl>
                         <RadioGroupItem value="PROCEDURE" />
                       </FormControl>
-                      <FormLabel className="font-normal">Procedimiento</FormLabel>
+                      <FormLabel className="font-normal">Procedure</FormLabel>
                     </FormItem>
                   </RadioGroup>
                 </FormControl>
@@ -143,7 +143,7 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
                 name="medication.name"
                 render={({ field }) => (
                   <FormItem className="">
-                    <FormLabel className="text-sm">Nombre de la medicina</FormLabel>
+                    <FormLabel className="text-sm">Medicine name</FormLabel>
                     <FormControl>
                       <Input {...field} className=""></Input>
                     </FormControl>
@@ -156,7 +156,7 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
                 name="medication.dose"
                 render={({ field }) => (
                   <FormItem className="">
-                    <FormLabel className="text-sm">Dosis</FormLabel>
+                    <FormLabel className="text-sm">Dosage</FormLabel>
                     <FormControl>
                       <InputSelect onChange={field.onChange} options={['mg', 'ml']} />
                     </FormControl>
@@ -182,7 +182,7 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
                 name="medication.frequency"
                 render={({ field }) => (
                   <FormItem className="">
-                    <FormLabel className="text-sm">Frecuencia</FormLabel>
+                    <FormLabel className="text-sm">Frequency</FormLabel>
                     <FormControl>
                       <InputSelect onChange={field.onChange} options={['H', 'D', 'S', 'M']} />
                     </FormControl>
@@ -200,7 +200,7 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
                 name="therapy.description"
                 render={({ field }) => (
                   <FormItem className="">
-                    <FormLabel className="text-sm">Descripción de la terapia</FormLabel>
+                    <FormLabel className="text-sm">Description of Therapy </FormLabel>
                     <FormControl>
                       <Textarea {...field} className=" resize-none"></Textarea>
                     </FormControl>
@@ -217,7 +217,7 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
                 name="procedure.description"
                 render={({ field }) => (
                   <FormItem className="">
-                    <FormLabel className="text-sm">Descripción del procedimiento</FormLabel>
+                    <FormLabel className="text-sm"> Description of Procedure</FormLabel>
                     <FormControl>
                       <Textarea {...field} className=" resize-none"></Textarea>
                     </FormControl>
@@ -233,7 +233,7 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
             name="description"
             render={({ field }) => (
               <FormItem className="">
-                <FormLabel className="text-sm">Instrucciones</FormLabel>
+                <FormLabel className="text-sm">Instructions</FormLabel>
                 <FormControl>
                   <Textarea {...field} className=" resize-none"></Textarea>
                 </FormControl>
@@ -247,9 +247,9 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
               name="startDate"
               render={({ field }) => (
                 <FormItem className="flex-1">
-                  <FormLabel className="text-sm">Fecha de inicio</FormLabel>
+                  <FormLabel className="text-sm">Start date</FormLabel>
                   <FormControl>
-                    <DatePicker selected={field.value} onSelect={field.onChange} placeholder="Selecciona una fecha" />
+                    <DatePicker selected={field.value} onSelect={field.onChange} placeholder="Select a date" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -260,9 +260,9 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
               name="endDate"
               render={({ field }) => (
                 <FormItem className="flex-1">
-                  <FormLabel className="text-sm">Fecha de finalización</FormLabel>
+                  <FormLabel className="text-sm">End date</FormLabel>
                   <FormControl>
-                    <DatePicker selected={field.value} onSelect={field.onChange} placeholder="Selecciona una fecha" />
+                    <DatePicker selected={field.value} onSelect={field.onChange} placeholder="Select a date" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -272,10 +272,10 @@ const TreatmentForm = ({ appointment, toggle }: Props) => {
         </div>
         <div className="flex w-full gap-3">
           <Button onClick={() => toggle()} className="flex-1">
-            Cancelar
+            Cancel
           </Button>
           <Button type="submit" disabled={form.formState.isSubmitting} className=" flex-1">
-            {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar diagnostico'}
+            {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Keep diagnostico'}
           </Button>
         </div>
       </form>

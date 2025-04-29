@@ -7,21 +7,21 @@ import { Badge } from '@helsa/ui/components/badge';
 import { Loader2, Paperclip, Pill, Stethoscope } from 'lucide-react';
 
 const typesDiagnosis = {
-  ALLERGY: 'Alergia',
-  DISEASE: 'Enfermedad',
-  CHRONIC_DISEASE: 'Enfermedad crónica',
-  SYMPTOM: 'Síntomas',
+  ALLERGY: 'Allergy',
+  DISEASE: 'Disease',
+  CHRONIC_DISEASE: 'Chronic Disease',
+  SYMPTOM: 'Symptom',
 };
 
 const typesTreatments = {
-  MEDICATION: 'Medicamento',
-  THERAPY: 'Terapia',
-  PROCEDURE: 'Procedimiento',
+  MEDICATION: 'Medicine',
+  THERAPY: 'Therapy',
+  PROCEDURE: 'Procedure',
 };
 
-const typesOrders = {
-  TEST: 'Exámenes',
-  REMITTANCE: 'Remisión',
+const tyWeightrders = {
+  TEST: 'Test',
+  REMITTANCE: 'Remittance',
 };
 
 const Indications = ({ data }: { data: Primitives<Appointment> }) => {
@@ -39,7 +39,7 @@ const Indications = ({ data }: { data: Primitives<Appointment> }) => {
       <AccordionItem value="diagnoses">
         <AccordionTrigger>
           <div className="flex justify-start items-center gap-2">
-            Diagnósticos <Stethoscope className="size-4" />
+            Diagnosis <Stethoscope className="size-4" />
           </div>
         </AccordionTrigger>
 
@@ -85,7 +85,7 @@ const Indications = ({ data }: { data: Primitives<Appointment> }) => {
       <AccordionItem value="orders">
         <AccordionTrigger>
           <div className="flex justify-start items-center gap-2">
-            Ordenes <Paperclip className="size-4" />
+            Orders<Paperclip className="size-4" />
           </div>
         </AccordionTrigger>
 
@@ -97,7 +97,7 @@ const Indications = ({ data }: { data: Primitives<Appointment> }) => {
             >
               <div className="flex justify-between items-center w-full">
                 <p className="text-sm">{order.description}</p>
-                <Badge variant={'default'}>{typesOrders[order.type]}</Badge>
+                <Badge variant={'default'}>{tyWeightrders[order.type]}</Badge>
               </div>
             </div>
           ))}

@@ -54,11 +54,11 @@ export const LicenseNumberSection = ({ licenseMedicalNumber, id }: LicenseNumber
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Numero de licencia medica</CardTitle>
+              <CardTitle>Medical License Number</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
                 {isEditing
-                  ? 'Ingresa tu número de licencia médica. Este número es público.'
-                  : 'Tu número de licencia médica es público.'}
+                  ? 'Enter your Medical License number. This number is public.'
+                  : 'Your Medical License leave number is public.'}
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{form.getValues('licenseMedicalNumber')}</p>
@@ -91,7 +91,7 @@ export const LicenseNumberSection = ({ licenseMedicalNumber, id }: LicenseNumber
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -99,7 +99,7 @@ export const LicenseNumberSection = ({ licenseMedicalNumber, id }: LicenseNumber
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>

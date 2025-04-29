@@ -52,9 +52,9 @@ export const BioSection = () => {
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Biografía</CardTitle>
+              <CardTitle>Biography</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                {isEditing ? 'Escribe una breve descripción sobre ti.' : 'Esto es lo que otros verán sobre ti.'}
+                {isEditing ? 'Write a brief description about yourself.' : 'This is what others will see about you.'}
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{user.bio}</p>
@@ -76,12 +76,12 @@ export const BioSection = () => {
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              {isEditing ? 'Puedes editar tu biografía en cualquier momento.' : 'Tu biografía es pública.'}
+              {isEditing ? 'You can edit your bio at any time.' : 'Your biography is public.'}
             </p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
                 <Button onClick={toggleEdit} className="rounded-none">
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -89,7 +89,7 @@ export const BioSection = () => {
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>

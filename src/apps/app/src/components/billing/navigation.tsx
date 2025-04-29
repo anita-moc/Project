@@ -53,12 +53,12 @@ export function Nav({ links }: NavProps) {
 
 const navItems = [
   {
-    title: 'Facturas',
+    title: 'Invoices',
     href: '/billing',
     roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
   },
   {
-    title: 'Tarifas',
+    title: 'Rates',
     href: '/billing/prices',
     roles: ['DOCTOR'],
   },

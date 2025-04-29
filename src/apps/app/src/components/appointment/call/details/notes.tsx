@@ -34,7 +34,7 @@ export const NoteList = ({
       {patient && (
         <Button onClick={toggle}>
           <ClipboardMinus className="size-4" />
-          Agregar Nota
+          Add Note
         </Button>
       )}
     </>
@@ -55,12 +55,12 @@ export const NotesForm = ({ data, toggle }: { data: Primitives<Appointment>; tog
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await createNote({ appointmentId: data.id, note: values.description });
-      toast.success('Nota agregada correctamente');
+      toast.success('Note added successfully');
       form.reset();
       router.refresh();
       toggle();
     } catch (error) {
-      toast.error('Error al agregar la nota');
+      toast.error('Error adding note');
     }
   };
 
@@ -74,7 +74,7 @@ export const NotesForm = ({ data, toggle }: { data: Primitives<Appointment>; tog
             render={({ field }) => (
               <FormItem className="my-2">
                 <FormControl>
-                  <Textarea placeholder="Agrega una nota" {...field} className="min-h-[100px]" />
+                  <Textarea placeholder="Add a note" {...field} className="min-h-[100px]" />
                 </FormControl>
                 <FormMessage></FormMessage>
               </FormItem>
@@ -88,11 +88,11 @@ export const NotesForm = ({ data, toggle }: { data: Primitives<Appointment>; tog
               }}
               className="flex-1"
             >
-              Cancelar
+              Cancel
             </Button>
 
             <Button className=" gap-3 flex-1" variant={'secondary'} disabled={!document || form.formState.isSubmitted}>
-              {form.formState.isSubmitting ? <Loader2 className="size-4 animate-spin" /> : 'Guardar nota'}
+              {form.formState.isSubmitting ? <Loader2 className="size-4 animate-spin" /> : 'Save note'}
             </Button>
           </div>
         </form>

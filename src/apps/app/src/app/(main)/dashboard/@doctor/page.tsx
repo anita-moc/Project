@@ -12,7 +12,7 @@ const Page = async () => {
       <div className="h-full flex justify-between items-center max-sm:flex-col mb-3">
         <div className="flex justify-start flex-col w-full h-full pt-5 pr-9 gap-5">
           <div className="w-full flex justify-between items-center gap-4">
-            <p className="text-lg font-semibold">Welcome Back, Dr José Véliz</p>
+            <p className="text-lg font-semibold">Welcome Back, Dr Anita</p>
             <DateRangePicker />
           </div>
 
@@ -20,42 +20,42 @@ const Page = async () => {
             <div className="flex justify-between items-center gap-4">
               <Card className=" w-1/4 rounded-lg bg-secondary shadow-none">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Ganancia total</CardTitle>
+                  <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
                   <DollarSign />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">$3000,00</div>
-                  <p className="text-xs text-muted-foreground">+20.1% del mes pasado</p>
+                  <div className="text-2xl font-bold">$3000.00</div>
+                  <p className="text-xs text-muted-foreground">+20.1% from last month</p>
                 </CardContent>
               </Card>
               <Card className=" w-1/4 rounded-lg bg-secondary shadow-none">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Promedio de pacients</CardTitle>
+                  <CardTitle className="text-sm font-medium">Average Patients</CardTitle>
                   <Users />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">46</div>
-                  <p className="text-xs text-muted-foreground">-16.4% del mes pasado</p>
+                  <p className="text-xs text-muted-foreground">-16.4% from last month</p>
                 </CardContent>
               </Card>
               <Card className=" w-1/4 rounded-lg bg-secondary shadow-none">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Promedio de edad</CardTitle>
+                  <CardTitle className="text-sm font-medium">Average Age</CardTitle>
                   <Calendar />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">33</div>
-                  <p className="text-xs text-muted-foreground">Por debajo de los 40</p>
+                  <p className="text-xs text-muted-foreground">Below 40</p>
                 </CardContent>
               </Card>
               <Card className=" w-1/4 rounded-lg bg-secondary shadow-none">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Tipos de consulta</CardTitle>
+                  <CardTitle className="text-sm font-medium">Consultation Types</CardTitle>
                   <Stethoscope />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">Revision</div>
-                  <p className="text-xs text-muted-foreground">Pacientes</p>
+                  <div className="text-2xl font-bold">Checkup</div>
+                  <p className="text-xs text-muted-foreground">Patients</p>
                 </CardContent>
               </Card>
             </div>

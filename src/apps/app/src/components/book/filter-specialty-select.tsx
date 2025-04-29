@@ -26,8 +26,8 @@ const SelectSpecialty = ({ selected, onChange, headless, specialties }: Props) =
   return (
     <ComboboxDropdown
       headless={headless}
-      placeholder="Selecciona una especialidad"
-      searchPlaceholder="Busca una especialidad"
+      placeholder="Select a Specialty"
+      searchPlaceholder="Find a Specialty"
       items={specialties.map(transformSpecialty)}
       selectedItem={selectedValue}
       onSelect={(item) => {

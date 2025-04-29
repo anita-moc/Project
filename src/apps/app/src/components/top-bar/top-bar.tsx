@@ -23,7 +23,7 @@ const AIButton = () => {
       onClick={() => setOpen()}
     >
       <span className="p-1 flex justify-center items-center rounded-none text-xs">
-        <Sparkles className="size-4 mr-2" /> {'Ask Helsa a question'}
+        <Sparkles className="size-4 mr-2" /> {'Ask Gonurse a question'}
       </span>
     </div>
   );

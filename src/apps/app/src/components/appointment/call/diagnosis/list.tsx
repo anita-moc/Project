@@ -13,10 +13,10 @@ type Props = {
 };
 
 const typesDiagnosis = {
-  ALLERGY: 'Alergia',
-  DISEASE: 'Enfermedad',
-  CHRONIC_DISEASE: 'Enfermedad crónica',
-  SYMPTOM: 'Síntomas',
+  ALLERGY: 'Allergy',
+  DISEASE: 'Disease',
+  CHRONIC_DISEASE: 'Chronic Disease',
+  SYMPTOM: 'Symptom',
 };
 
 const DiagnosesList = ({ diagnoses, pathologies, toggle }: Props) => {
@@ -43,7 +43,7 @@ const DiagnosesList = ({ diagnoses, pathologies, toggle }: Props) => {
       </div>
       <Button onClick={toggle}>
         <ClipboardMinus className="size-4" />
-        Agregar diagnostico
+        Add diagnosis
       </Button>
     </div>
   );

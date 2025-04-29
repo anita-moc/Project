@@ -10,7 +10,7 @@ export default function PricingPage() {
   const pricingSections = [
     {
       id: 'patients',
-      title: 'Pacientes',
+      title: 'Patients',
       plans: [
         {
           name: 'Básico',
@@ -20,12 +20,12 @@ export default function PricingPage() {
         {
           name: 'Premium',
           price: '$9.99/mes',
-          features: ['Todo lo del plan Básico', 'Chat con doctores', 'Recordatorios de medicamentos'],
+          features: ['Todo lo del plan Básico', 'Chat con doctores', 'Recordatorios de Medicines'],
         },
         {
           name: 'Familiar',
           price: '$19.99/mes',
-          features: ['Todo lo del plan Premium', 'Hasta 5 perfiles familiares', 'Descuentos en medicamentos'],
+          features: ['Todo lo del plan Premium', 'Hasta 5 perfiles familiares', 'Descuentos en Medicines'],
         },
       ],
       features: [
@@ -33,9 +33,9 @@ export default function PricingPage() {
         { name: 'Búsqueda de doctores', includedIn: ['Básico', 'Premium', 'Familiar'] },
         { name: 'Citas en línea', includedIn: ['Básico', 'Premium', 'Familiar'] },
         { name: 'Chat con doctores', includedIn: ['Premium', 'Familiar'] },
-        { name: 'Recordatorios de medicamentos', includedIn: ['Premium', 'Familiar'] },
+        { name: 'Recordatorios de Medicines', includedIn: ['Premium', 'Familiar'] },
         { name: 'Perfiles familiares', includedIn: ['Familiar'] },
-        { name: 'Descuentos en medicamentos', includedIn: ['Familiar'] },
+        { name: 'Descuentos en Medicines', includedIn: ['Familiar'] },
       ],
     },
     {
@@ -45,26 +45,26 @@ export default function PricingPage() {
         {
           name: 'Básico',
           price: '$29.99/mes',
-          features: ['Perfil profesional', 'Gestión de citas', 'Hasta 50 pacientes'],
+          features: ['Perfil profesional', 'Gestión de citas', 'Hasta 50 Patients'],
         },
         {
           name: 'Profesional',
           price: '$59.99/mes',
-          features: ['Todo lo del plan Básico', 'Chat con pacientes', 'Hasta 200 pacientes'],
+          features: ['Todo lo del plan Básico', 'Chat con Patients', 'Hasta 200 Patients'],
         },
         {
           name: 'Experto',
           price: '$99.99/mes',
-          features: ['Todo lo del plan Profesional', 'Pacientes ilimitados', 'Integración con EMR'],
+          features: ['Todo lo del plan Profesional', 'Patients ilimitados', 'Integración con EMR'],
         },
       ],
       features: [
         { name: 'Perfil profesional', includedIn: ['Básico', 'Profesional', 'Experto'] },
         { name: 'Gestión de citas', includedIn: ['Básico', 'Profesional', 'Experto'] },
-        { name: 'Chat con pacientes', includedIn: ['Profesional', 'Experto'] },
-        { name: 'Hasta 50 pacientes', includedIn: ['Básico'] },
-        { name: 'Hasta 200 pacientes', includedIn: ['Profesional'] },
-        { name: 'Pacientes ilimitados', includedIn: ['Experto'] },
+        { name: 'Chat con Patients', includedIn: ['Profesional', 'Experto'] },
+        { name: 'Hasta 50 Patients', includedIn: ['Básico'] },
+        { name: 'Hasta 200 Patients', includedIn: ['Profesional'] },
+        { name: 'Patients ilimitados', includedIn: ['Experto'] },
         { name: 'Integración con EMR', includedIn: ['Experto'] },
       ],
     },
@@ -75,7 +75,7 @@ export default function PricingPage() {
         {
           name: 'Estándar',
           price: '$499/mes',
-          features: ['Gestión de personal', 'Calendario de citas', 'Hasta 50 doctores'],
+          features: ['Gestión de personal', 'Calendar de citas', 'Hasta 50 doctores'],
         },
         {
           name: 'Avanzado',
@@ -90,7 +90,7 @@ export default function PricingPage() {
       ],
       features: [
         { name: 'Gestión de personal', includedIn: ['Estándar', 'Avanzado', 'Empresarial'] },
-        { name: 'Calendario de citas', includedIn: ['Estándar', 'Avanzado', 'Empresarial'] },
+        { name: 'Calendar de citas', includedIn: ['Estándar', 'Avanzado', 'Empresarial'] },
         { name: 'Hasta 50 doctores', includedIn: ['Estándar'] },
         { name: 'Hasta 200 doctores', includedIn: ['Avanzado'] },
         { name: 'Doctores ilimitados', includedIn: ['Empresarial'] },

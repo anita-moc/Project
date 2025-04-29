@@ -30,13 +30,13 @@ const SidebarNotifications = () => {
                 value="inbox"
                 className="data-[state=active]:shadow-none data-[state=active]:border-b rounded-none  data-[state=active]:text-[var(--color-brand-primary)]"
               >
-                Bandeja
+                Inbox
               </TabsTrigger>
               <TabsTrigger
                 value="archive"
                 className="data-[state=active]:shadow-none data-[state=active]:border-b rounded-none data-[state=active]:text-[var(--color-brand-primary)]"
               >
-                Archivados
+                Archive
               </TabsTrigger>
             </TabsList>
             <div>
@@ -50,7 +50,7 @@ const SidebarNotifications = () => {
               <div className="border p-3 rounded-full">
                 <Inbox />
               </div>
-              <p className="text-muted-foreground text-sm">No hay notificaciones en tu inbox</p>
+              <p className="text-muted-foreground text-sm">There are no notifications in your inbox.</p>
             </div>
           </TabsContent>
           <TabsContent value="archive">
@@ -58,7 +58,9 @@ const SidebarNotifications = () => {
               <div className="border p-3 rounded-full">
                 <Inbox />
               </div>
-              <p className="text-muted-foreground text-sm">No has archivado mensajes</p>
+              <p className="text-muted-foreground text-sm">
+              You have not archived messages
+              </p>
             </div>
           </TabsContent>
         </Tabs>

@@ -40,7 +40,7 @@ const AvatarSection = () => {
       if (res) {
         await authClient.updateUser({ image: res });
       }
-      toast.success('Avatar actualizado correctamente');
+      toast.success('Avatar updated successfully');
       router.refresh();
     }
   };
@@ -52,7 +52,7 @@ const AvatarSection = () => {
             <div>
               <CardTitle>Avatar</CardTitle>
               <p className="text-muted-foreground text-sm mt-3">
-                Este es tu avatar. Clickea el avatar para subir una foto desde tus archivos
+              This is your avatar. Click the avatar to upload a photo from your files.
               </p>
             </div>
             <FormField
@@ -74,7 +74,7 @@ const AvatarSection = () => {
             />
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
-            <p className="text-muted-foreground text-xs">Un avatar es opcional pero extremadamente recomendado.</p>
+            <p className="text-muted-foreground text-xs">An avatar is optional but highly recommended.</p>
             <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
               {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
             </Button>

@@ -118,7 +118,7 @@ export default function DoctorSchedule({ doctorId, schedule, setIsOpen }: Doctor
       });
       setIsOpen?.(false);
     } catch (error) {
-      toast.error('Error al guardar el horario');
+      toast.error('Error when keeping the schedule');
     }
   };
 
@@ -136,13 +136,14 @@ export default function DoctorSchedule({ doctorId, schedule, setIsOpen }: Doctor
             {enabled && (
               <Accordion type="multiple" className="w-full border-none">
                 <AccordionItem value={`hours-${day}`} className="border-none">
-                  <AccordionTrigger className="hover:no-underline text-xs">Ver horas</AccordionTrigger>
+                  <AccordionTrigger className="hover:no-underline text-xs">
+                  See hours</AccordionTrigger>
                   <AccordionContent className="flex flex-col w-full gap-3 ">
                     <div className="w-full">
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button variant="outline" role="combobox" className="h-10 border    w-full">
-                            Agrega horas a tu dia
+                          Add hours to your day
                             <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                           </Button>
                         </PopoverTrigger>
@@ -191,18 +192,18 @@ export default function DoctorSchedule({ doctorId, schedule, setIsOpen }: Doctor
         ))}
       </div>
       <Button className="mt-4 w-full" onClick={save} disabled={isPending}>
-        {isPending ? <Loader2 className="size-4 animate-spin" /> : 'Guardar horario'}
+        {isPending ? <Loader2 className="size-4 animate-spin" /> : 'Keep horario'}
       </Button>
       <AlertDialog open={hasErrored ? true : false}>
         <AlertDialogContent className="sm:">
           <AlertDialogHeader className="">
-            <AlertDialogTitle>Ups, error.</AlertDialogTitle>
-            <AlertDialogDescription>Error al guardar el horario, por favor intenta de nuevo.</AlertDialogDescription>
+            <AlertDialogTitle>Oops, mistake.</AlertDialogTitle>
+            <AlertDialogDescription>Error keeping track of schedule, please try again.</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogAction asChild>
               <Button className="" variant={'default'} onClick={reset}>
-                Entendido
+              Understood
               </Button>
             </AlertDialogAction>
           </AlertDialogFooter>

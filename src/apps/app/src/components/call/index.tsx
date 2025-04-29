@@ -124,7 +124,7 @@ const VideoCallContainer = ({ appointmentId }: { appointmentId: string }) => {
           variant={'outline'}
         >
           <PhoneIncoming className="size-4" />
-          Entrar
+          Enter
         </Button>
       </div>
     </div>
@@ -180,7 +180,7 @@ const RemoteVideo = () => {
   if (!remoteParticipant) {
     return (
       <div className="flex h-full w-full justify-center items-center">
-        <p className="text-lg font-semibold">Esperando a que alguien se una a la llamada</p>
+        <p className="text-lg font-semibold">Waiting for someone to join the call</p>
       </div>
     );
   }
@@ -323,7 +323,6 @@ const CallControls = () => {
     </motion.div>
   );
 };
-
 const ListDevices = () => {
   const {
     videoDevices,
@@ -347,7 +346,7 @@ const ListDevices = () => {
             </DropdownMenuTrigger>
           </TooltipTrigger>
           <TooltipContent sideOffset={15} className="text-[10px] px-2 py-1 rounded-sm font-medium">
-            <p>Configuraciones</p>
+            <p>Settings</p> {/* translated */}
           </TooltipContent>
         </Tooltip>
         <DropdownMenuContent className="w-[300px] rounded-none" side="top" align="start">
@@ -357,7 +356,7 @@ const ListDevices = () => {
                 <div className="w-4 h-4 mr-2 flex justify-center items-center">
                   <Video />
                 </div>
-                <span className="text-sm">Selecciona la cámara</span>
+                <span className="text-sm">Select Camera</span> {/* translated */}
               </DropdownMenuSubTrigger>
               <DropdownMenuPortal>
                 <DropdownMenuSubContent className="rounded-none">
@@ -385,7 +384,7 @@ const ListDevices = () => {
                 <div className="w-4 h-4 mr-2 flex justify-center items-center">
                   <Mic />
                 </div>
-                <span className="text-sm">Selecciona el micrófono</span>
+                <span className="text-sm">Select Microphone</span> {/* translated */}
               </DropdownMenuSubTrigger>
               <DropdownMenuPortal>
                 <DropdownMenuSubContent className="rounded-none">
@@ -413,7 +412,7 @@ const ListDevices = () => {
                 <div className="w-4 h-4 mr-2 flex justify-center items-center">
                   <Volume2 />
                 </div>
-                <span className="text-sm">Selecciona el parlante</span>
+                <span className="text-sm">Select Speaker</span> {/* translated */}
               </DropdownMenuSubTrigger>
               <DropdownMenuPortal>
                 <DropdownMenuSubContent className="rounded-none">

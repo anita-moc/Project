@@ -17,16 +17,16 @@ import { HeaderDoctor, HeaderPatient } from './headers';
 import { NotesContent } from './notes';
 
 const typesDiagnosis = {
-  ALLERGY: 'Alergia',
-  DISEASE: 'Enfermedad',
-  CHRONIC_DISEASE: 'Enfermedad crónica',
-  SYMPTOM: 'Síntomas',
+  ALLERGY: 'Allergy',
+  DISEASE: 'Disease',
+  CHRONIC_DISEASE: 'Chronic Disease',
+  SYMPTOM: 'Symptoms',
 };
 
 const typesTreatments = {
-  MEDICATION: 'Medicamento',
-  THERAPY: 'Terapia',
-  PROCEDURE: 'Procedimiento',
+  MEDICATION: 'Medication',
+  THERAPY: 'Therapy',
+  PROCEDURE: 'Procedure',
 };
 
 const DetailsSheet = async ({ data, user }: { data: Primitives<Appointment>; user: any }) => {
@@ -48,7 +48,7 @@ const DetailsSheet = async ({ data, user }: { data: Primitives<Appointment>; use
       <SheetTrigger asChild>
         <Button className="gap-2" variant={'outline'}>
           <ReceiptText className="size-4" />
-          Detalles
+          Details
         </Button>
       </SheetTrigger>
       <SheetContent className="sm:w-1/3 sm:max-w-full p-4 bg-transparent border-none focus-visible:outline-none ">
@@ -57,11 +57,11 @@ const DetailsSheet = async ({ data, user }: { data: Primitives<Appointment>; use
           {user.role === 'PATIENT' && <HeaderPatient data={data} />}
 
           <div className="space-y-3 px-1 py-3">
-            <p className="text-lg ">Detalles</p>
+            <p className="text-lg ">Details</p>
             <p className="text-sm text-muted-foreground">{data?.motive ?? ''}</p>
           </div>
           <div className="space-y-3 px-1 py-3">
-            <p className="text-lg ">Síntomas</p>
+            <p className="text-lg ">Symptoms</p>
             <div className="flex justify-start items-center gap-2">
               {data?.symptoms?.map((symptom) => (
                 <Badge key={symptom.id} variant={'outline'}>
@@ -74,7 +74,7 @@ const DetailsSheet = async ({ data, user }: { data: Primitives<Appointment>; use
             <AccordionItem value="attachments">
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex justify-start items-center gap-2">
-                  Archivos y adjuntos <Paperclip className="size-4" />
+                  Files and Attachments <Paperclip className="size-4" />
                 </div>
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-3">
@@ -84,7 +84,7 @@ const DetailsSheet = async ({ data, user }: { data: Primitives<Appointment>; use
             <AccordionItem value="notes">
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex justify-start items-center gap-2">
-                  Notas <StickyNote className="size-4" />
+                  Notes <StickyNote className="size-4" />
                 </div>
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-3">
@@ -94,7 +94,7 @@ const DetailsSheet = async ({ data, user }: { data: Primitives<Appointment>; use
             <AccordionItem value="diagnoses">
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex justify-start items-center gap-2">
-                  Diagnósticos del paciente <Stethoscope className="size-4" />
+                  Patient Diagnoses <Stethoscope className="size-4" />
                 </div>
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-3">
@@ -120,7 +120,7 @@ const DetailsSheet = async ({ data, user }: { data: Primitives<Appointment>; use
             <AccordionItem value="treatments">
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex justify-start items-center gap-2">
-                  Tratamientos del paciente <Pill className="size-4" />
+                  Patient Treatments <Pill className="size-4" />
                 </div>
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-3">

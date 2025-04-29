@@ -62,7 +62,7 @@ const navItems = [
     roles: ['DOCTOR'],
   },
   {
-    title: 'Paciente',
+    title: 'Patient Details',
     href: '/profile/patient',
     roles: ['PATIENT'],
   },
@@ -77,17 +77,17 @@ const navItems = [
     roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
   },
   {
-    title: 'Apariencia',
+    title: 'Appearance',
     href: '/profile/appearance',
     roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
   },
   {
-    title: 'Notificaciones',
+    title: 'Notifications',
     href: '/profile/notifications',
     roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
   },
   {
-    title: 'Contraseña',
+    title: 'Password',
     href: '/profile/security',
     roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
   },

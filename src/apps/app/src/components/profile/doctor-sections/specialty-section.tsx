@@ -63,11 +63,11 @@ export const SpecialtySection = ({
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Especialidad medica</CardTitle>
+              <CardTitle>Specialty medica</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
                 {isEditing
-                  ? 'Selecciona la especialidad médica en la que te especializas.'
-                  : 'Esta información es importante para los pacientes.'}
+                  ? 'Selecciona la Specialty médica en la que te especializas.'
+                  : 'Esta información es importante para los Patients.'}
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{selectedSpecialty?.name}</p>
@@ -99,8 +99,8 @@ export const SpecialtySection = ({
             </div>
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
-            <p className="text-muted-foreground text-xs">
-              Sin una especialidad no se puede empezar a atender pacientes.
+            <p className="text-muted-foreground text-xs"> 
+            Without a Specialty you cannot start treating patients.
             </p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
@@ -111,7 +111,7 @@ export const SpecialtySection = ({
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -119,7 +119,7 @@ export const SpecialtySection = ({
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>

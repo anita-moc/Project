@@ -111,9 +111,9 @@ export const EducationsSection = ({
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Estudios</CardTitle>
+              <CardTitle>Studies</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                Tus estudios y certificaciones son importantes para los pacientes. Agrega tus estudios y certificaciones
+              Your education and certifications are important to patients. Add your education and certifications.
               </p>
               <div className="flex flex-col w-full gap-2 mt-2">
                 {educations.map((education, index) => (
@@ -142,20 +142,20 @@ export const EducationsSection = ({
                         </AlertDialogTrigger>
                         <AlertDialogContent className="sm:rounded-none">
                           <AlertDialogHeader>
-                            <AlertDialogTitle className="">Cuidado!</AlertDialogTitle>
+                            <AlertDialogTitle className="">Careful!</AlertDialogTitle>
                             <AlertDialogDescription className="">
-                              ¿Estas seguro de que deseas eliminar el registro?
+                            Are you sure you want to delete the Records?
                             </AlertDialogDescription>
                           </AlertDialogHeader>
                           <AlertDialogFooter className="flex w-full justify-end items-center">
-                            <AlertDialogCancel className="rounded-none max-sm:w-full">Cancelar</AlertDialogCancel>
+                            <AlertDialogCancel className="rounded-none max-sm:w-full">Cancel</AlertDialogCancel>
                             <AlertDialogAction asChild className="bg-destructive text-primary">
                               <Button
                                 variant="destructive"
                                 className="rounded-none max-sm:w-full"
                                 onClick={() => deleteEducation(education.id)}
                               >
-                                Eliminar
+                                Delete
                               </Button>
                             </AlertDialogAction>
                           </AlertDialogFooter>
@@ -172,7 +172,7 @@ export const EducationsSection = ({
                     name={`education.title`}
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel>Titulo</FormLabel>
+                        <FormLabel>Qualification</FormLabel>
                         <FormControl>
                           <Input {...field} className="rounded-none"></Input>
                         </FormControl>
@@ -185,7 +185,7 @@ export const EducationsSection = ({
                     name="education.institution"
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel>Institución</FormLabel>
+                        <FormLabel>Institution</FormLabel>
                         <FormControl>
                           <Input {...field} className="rounded-none"></Input>
                         </FormControl>
@@ -198,7 +198,7 @@ export const EducationsSection = ({
                     name="education.graduatedAt"
                     render={({ field }) => (
                       <FormItem className="flex flex-1 flex-col">
-                        <FormLabel className="mb-2">Fecha de graduación</FormLabel>
+                        <FormLabel className="mb-2">Graduation date</FormLabel>
                         <Popover>
                           <PopoverTrigger asChild>
                             <FormControl>
@@ -234,7 +234,7 @@ export const EducationsSection = ({
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              Agrega tus estudios y certificaciones para que los pacientes sepan más sobre ti.
+              Add your education and certifications so patients can learn more about you.
             </p>
             {isEditing || isCreating ? (
               <div className="flex justify-end items-center gap-3">
@@ -248,15 +248,15 @@ export const EducationsSection = ({
                   className="rounded-none"
                   type="button"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Keep'}
                 </Button>
               </div>
             ) : (
               <Button onClick={toggleCreate} className="rounded-none">
-                Agregar
+                Add
               </Button>
             )}
           </CardFooter>

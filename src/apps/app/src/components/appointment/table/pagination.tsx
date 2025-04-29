@@ -40,7 +40,7 @@ export function AppointmentPagination({ meta }: Props) {
     <div className="flex items-center justify-between px-2 mt-2 py-2">
       <div className="flex items-center space-x-6 lg:space-x-8">
         <div className="flex items-center space-x-2">
-          <p className="text-sm font-medium">Tamaño de la pagina</p>
+          <p className="text-sm font-medium">page size</p>
           <Select
             value={`${pageSize}`}
             onValueChange={(value) => createPageSizeQuery(value)}

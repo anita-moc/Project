@@ -37,7 +37,7 @@ const VitalsForm = ({ toggle, appointment }: Props) => {
       weight: '',
       //height: '',
       // respiratoryRate: '',
-      // oxygenSatur: '',
+      // oxygenSaturation: '',
     },
     mode: 'all',
   });
@@ -51,9 +51,9 @@ const VitalsForm = ({ toggle, appointment }: Props) => {
         bloodPressure: Number(data.bloodPressure),
       });
       toggle();
-      toast.success('Signos vitales guardados correctamente');
+      toast.success('Vital signs saved correctly');
     } catch (error) {
-      toast.error('Error al guardar los signos vitales');
+      toast.error('Error saving vital signs');
     }
   };
   return (
@@ -69,7 +69,7 @@ const VitalsForm = ({ toggle, appointment }: Props) => {
             name="temperature"
             render={({ field }) => (
               <FormItem className="my-2">
-                <FormLabel className="text-sm">Temperatura del cuerpo</FormLabel>
+                <FormLabel className="text-sm">Body temperature</FormLabel>
                 <FormControl>
                   <Input {...field} className="rounded-none"></Input>
                 </FormControl>
@@ -83,7 +83,7 @@ const VitalsForm = ({ toggle, appointment }: Props) => {
             name="heartRate"
             render={({ field }) => (
               <FormItem className="my-2">
-                <FormLabel className="text-sm">frecuencia cardiaca</FormLabel>
+                <FormLabel className="text-sm">Heart rate</FormLabel>
                 <FormControl>
                   <Input {...field} className="rounded-none"></Input>
                 </FormControl>
@@ -97,7 +97,7 @@ const VitalsForm = ({ toggle, appointment }: Props) => {
             name="weight"
             render={({ field }) => (
               <FormItem className="my-2">
-                <FormLabel className="text-sm">Peso (Kg)</FormLabel>
+                <FormLabel className="text-sm">Weight (Kg)</FormLabel>
                 <FormControl>
                   <Input {...field} className="rounded-none"></Input>
                 </FormControl>
@@ -111,7 +111,7 @@ const VitalsForm = ({ toggle, appointment }: Props) => {
             name="bloodPressure"
             render={({ field }) => (
               <FormItem className="my-2">
-                <FormLabel className="text-sm">Presión arterial</FormLabel>
+                <FormLabel className="text-sm">Blood pressure</FormLabel>
                 <FormControl>
                   <Input {...field} className="rounded-none"></Input>
                 </FormControl>
@@ -122,10 +122,10 @@ const VitalsForm = ({ toggle, appointment }: Props) => {
         </div>
         <div className="flex w-full gap-3">
           <Button onClick={() => toggle()} className="flex-1">
-            Cancelar
+            Cancel
           </Button>
           <Button type="submit" disabled={form.formState.isSubmitting} className="rounded-none flex-1">
-            {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar signos vitales'}
+            {form.formState.isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Maintain vital signs'}
           </Button>
         </div>
       </form>

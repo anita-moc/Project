@@ -53,9 +53,9 @@ export const NameSection = () => {
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Nombre</CardTitle>
+              <CardTitle>Name</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                Este es el nombre que se mostrara en tu perfil. Puedes cambiarlo
+              This is the name that will be displayed on your profile. You can change it.
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{form.getValues('name')}</p>
@@ -65,7 +65,7 @@ export const NameSection = () => {
                   name="name"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Nombre</FormLabel>
+                      <FormLabel>Name</FormLabel>
                       <FormControl>
                         <Input {...field} className="rounded-none"></Input>
                       </FormControl>
@@ -78,12 +78,12 @@ export const NameSection = () => {
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              Por favor ingresa tu nombre completo, o un nombre para mostrar con el que te sientas cómodo.
+            Please enter your full name, or a display name you feel comfortable with.
             </p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
                 <Button onClick={toggleEdit} className="rounded-none">
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -91,7 +91,7 @@ export const NameSection = () => {
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>

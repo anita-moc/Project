@@ -16,7 +16,7 @@ const Treatment = ({ data }: Props) => {
         fallback={
           <Button className="gap-2" variant={'outline'} disabled>
             <Pill className="size-4" />
-            Tratamiento
+            Treatment
           </Button>
         }
       >

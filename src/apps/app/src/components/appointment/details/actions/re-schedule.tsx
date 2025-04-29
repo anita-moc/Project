@@ -8,7 +8,7 @@ const ReSchedule = ({ status }: { status: string }) => {
   return (
     <Button className=" h-9 gap-2" variant={'secondary'}>
       <CalendarDays className="size-4" />
-      Re agendar
+      Reschedule
     </Button>
   );
 };

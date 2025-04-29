@@ -56,9 +56,9 @@ export const AddressSection = ({ consultingRoom, id }: AddressFormValues & { id:
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mt-4">
           <CardHeader>
             <div>
-              <CardTitle>Ubicación de consultorio</CardTitle>
+              <CardTitle>Office location</CardTitle>
               <p className="text-sm text-muted-foreground mt-2">
-                Esta es la ubicación de tu consultorio. Los pacientes podrán ver esta información en tu perfil.
+              This is your office location. Patients will be able to see this information on your profile.
               </p>
               {!isEditing ? (
                 <div className="space-y-2 mt-3">
@@ -76,7 +76,7 @@ export const AddressSection = ({ consultingRoom, id }: AddressFormValues & { id:
                     name="consultingRoom.city"
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel>Ciudad</FormLabel>
+                        <FormLabel>City</FormLabel>
                         <FormControl>
                           <div>
                             <Input {...field} className="outline-none rounded-none"></Input>
@@ -91,7 +91,7 @@ export const AddressSection = ({ consultingRoom, id }: AddressFormValues & { id:
                     name="consultingRoom.address"
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel>Dirección</FormLabel>
+                        <FormLabel>Address</FormLabel>
                         <FormControl>
                           <div>
                             <Input {...field} className="outline-none rounded-none"></Input>
@@ -107,7 +107,7 @@ export const AddressSection = ({ consultingRoom, id }: AddressFormValues & { id:
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              {isEditing ? 'Este número es público.' : 'Este número es público.'}
+              {isEditing ? 'This number is public.' : 'This number is public.'}
             </p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
@@ -118,7 +118,7 @@ export const AddressSection = ({ consultingRoom, id }: AddressFormValues & { id:
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -126,7 +126,7 @@ export const AddressSection = ({ consultingRoom, id }: AddressFormValues & { id:
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>

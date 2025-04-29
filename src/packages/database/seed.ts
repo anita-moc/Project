@@ -189,7 +189,7 @@ const pathologies = [
 const appointmentTypes = [
   { name: 'Consulta', color: '#FF0000' },
   { name: 'Estudio', color: '#00FF00' },
-  { name: 'Procedimiento', color: '#0000FF' },
+  { name: 'Procedure', color: '#0000FF' },
 ];
 
 const test = [

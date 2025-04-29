@@ -13,13 +13,13 @@ type Props = {
   toggle: VoidFunction;
 };
 const orderStatus = {
-  PENDING: 'Pendiente',
-  COMPLETED: 'Completado',
-  CANCELED: 'Cancelado',
+  PENDING: 'Pending',
+  COMPLETED: 'Completed',
+  CANCELED: 'Canceled',
 };
 const orderTypes = {
-  TEST: 'Prueba',
-  REMITTANCE: 'Remisión',
+  TEST: 'Test',
+  REMITTANCE: 'Remittance',
 };
 const OrdersList = ({ data, orders, toggle }: Props) => {
   return (
@@ -40,8 +40,8 @@ const OrdersList = ({ data, orders, toggle }: Props) => {
         ))}
       </div>
       <Button onClick={toggle}>
-        <ScrollText className="size-4" />
-        Agregar Orden
+        <ScrollText className="size-4" />     
+Add Order
       </Button>
     </div>
   );

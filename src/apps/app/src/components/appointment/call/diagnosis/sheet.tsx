@@ -23,7 +23,7 @@ const DiagnosisSheet = async ({ data }: Props) => {
       <SheetTrigger asChild>
         <Button className="gap-2" variant={'outline'}>
           <ClipboardMinus className="size-4" />
-          Diagnostico
+          Diagnosis
         </Button>
       </SheetTrigger>
       <SheetContent className="sm:w-1/3 sm:max-w-full p-4 bg-transparent border-none focus-visible:outline-none ">
@@ -31,9 +31,9 @@ const DiagnosisSheet = async ({ data }: Props) => {
           <SheetHeader className="flex flex-row justify-between items-center gap-4 border-b mb-3">
             <div className="flex flex-row justify-between w-full items-center gap-4">
               <div className="flex flex-col gap-2 py-2">
-                <SheetTitle className="text-xl">Agregar diagnostico</SheetTitle>
+                <SheetTitle className="text-xl">Add Diagnosis</SheetTitle>
                 <p className="text-muted-foreground text-xs">
-                  Agrega un diagnostico para el paciente{' '}
+                  Add a diagnosis for patient{' '}
                   <span className="font-bold capitalize">{data?.patient?.user?.name}</span>
                 </p>
               </div>
@@ -46,7 +46,7 @@ const DiagnosisSheet = async ({ data }: Props) => {
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent className="rounded-none">
-                    <p>Ir al historial de diagnósticos</p>
+                    <p>View diagnosis history</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>

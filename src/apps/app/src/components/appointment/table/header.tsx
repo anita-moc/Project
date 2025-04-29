@@ -59,7 +59,7 @@ export function AppointmentsTableHeader({ table, loading }: Props) {
               variant="ghost"
               onClick={() => createSortQuery('date')}
             >
-              <span>Fecha</span>
+              <span>Date</span>
               {'date' === column && value === 'ASC' && <ArrowUp size={16} />}
               {'date' === column && value === 'DESC' && <ArrowDown size={16} />}
             </Button>
@@ -72,7 +72,7 @@ export function AppointmentsTableHeader({ table, loading }: Props) {
               variant="ghost"
               onClick={() => createSortQuery('status')}
             >
-              <span>Estado</span>
+              <span>Status</span>
               {'status' === column && value === 'ASC' && <ArrowUp size={16} />}
               {'status' === column && value === 'DESC' && <ArrowDown size={16} />}
             </Button>
@@ -86,13 +86,13 @@ export function AppointmentsTableHeader({ table, loading }: Props) {
 
         {isVisible('specialty') && (
           <TableHead className="border-b">
-            <span>Especialidad</span>
+            <span>Specialty</span>
           </TableHead>
         )}
 
         {isVisible('type') && (
           <TableHead className="border-b">
-            <span>Tipo de consulta</span>
+            <span>Query type</span>
           </TableHead>
         )}
       </TableRow>

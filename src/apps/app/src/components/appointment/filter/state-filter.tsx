@@ -9,16 +9,16 @@ type Props = {
 };
 
 const stateLabel: Record<string, string> = {
-  SCHEDULED: 'Agendada',
-  RESCHEDULED: 'Reagendada',
-  CONFIRMED: 'Confirmada',
-  LATE: 'Tarde',
-  CANCELLED: 'Cancelada',
-  WAITING_DOCTOR: 'Esperando al doctor',
-  WAITING_PATIENT: 'Esperando al paciente',
-  STARTED: 'Iniciada',
-  MISSED: 'Perdida',
-  FINISHED: 'Finalizada',
+  SCHEDULED: 'Schedule',
+  RESCHEDULED: 'Rescheduled',
+  CONFIRMED: 'Confirmed',
+  LATE: 'Late',
+  CANCELLED: 'Cancelled',
+  WAITING_DOCTOR: 'Waiting for the doctor',
+  WAITING_PATIENT: 'Waiting for the patient',
+  STARTED: 'Started',
+  MISSED: 'Missed',
+  FINISHED: 'Finished',
 };
 
 function transformState(state: string) {
@@ -33,8 +33,8 @@ const SelectState = ({ selected, onChange, headless, states }: Props) => {
   return (
     <ComboboxDropdown
       headless={headless}
-      placeholder="Selecciona una estado"
-      searchPlaceholder="Busca una estado"
+      placeholder="Select a state"
+      searchPlaceholder="Search for a state"
       items={states.map(transformState)}
       selectedItem={selectedValue}
       onSelect={(item) => {

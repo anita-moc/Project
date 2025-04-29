@@ -40,7 +40,7 @@ const Vitals = ({ appointment }: Props) => {
       <SheetTrigger asChild>
         <Button className="gap-2" variant={'outline'}>
           <ReceiptText className="size-4" />
-          Signos vitales
+          Vital signs
         </Button>
       </SheetTrigger>
       <SheetContent className="sm:w-1/3 sm:max-w-full p-4 border-none focus-visible:outline-none bg-transparent">
@@ -48,8 +48,8 @@ const Vitals = ({ appointment }: Props) => {
           <SheetHeader className="flex flex-row justify-between items-center gap-4 border-b mb-3">
             <div className="flex flex-row justify-start items-center gap-4">
               <div className="flex flex-col gap-2 py-2">
-                <SheetTitle className="text-xl">Signos vitales</SheetTitle>
-                <p className="text-muted-foreground text-xs">Agregue o modifique los signos vitales del paciente</p>
+                <SheetTitle className="text-xl">Vital signs</SheetTitle>
+                <p className="text-muted-foreground text-xs">Add or modify the patient's Vital signs</p>
               </div>
             </div>
           </SheetHeader>

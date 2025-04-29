@@ -16,7 +16,7 @@ const Orders = ({ data }: Props) => {
         fallback={
           <Button className="gap-2" variant={'outline'} disabled>
             <ScrollText className="size-4" />
-            Ordenes
+            Orders
           </Button>
         }
       >

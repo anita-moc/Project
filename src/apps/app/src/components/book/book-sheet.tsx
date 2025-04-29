@@ -19,7 +19,7 @@ const BookSheet = ({ data, isOpen, setOpen, types, symptoms }: Props) => {
       <SheetContent className="max-sm:w-full md:w-1/3 sm:max-w-full p-4 bg-transparent border-none">
         <div className="bg-background p-6 border border-sidebar h-full overflow-y-auto no-scroll box-border flex flex-col">
           <SheetHeader>
-            <SheetTitle>Agendar tu cita</SheetTitle>
+            <SheetTitle>Schedule your appointment</SheetTitle>
           </SheetHeader>
           <DoctorAppointment doctor={data!} types={types ?? []} symptoms={symptoms} />
         </div>

@@ -28,11 +28,11 @@ export const HeaderPatient = ({ data }: { data: Primitives<Appointment> }) => {
       </SheetHeader>
       <div className="flex gap-2 px-1 border-b py-2">
         <div className="flex justify-start items-center gap-2 text-sm">
-          <p className="">Especialidad:</p>
+          <p className="">Specialty:</p>
           <Badge variant={'outline'}>{data.specialty?.name || ''}</Badge>
         </div>
         <div className="flex justify-start items-center gap-2 text-sm">
-          <p className="">Nº de Licencia:</p>
+          <p className="">License No.:</p>
           <Badge variant={'outline'}>{data.doctor?.licenseMedicalNumber || ''}</Badge>
         </div>
       </div>
@@ -55,9 +55,9 @@ export const HeaderDoctor = ({ data }: { data: Primitives<Appointment> }) => {
               <Link href={`/patients/${data?.patient?.id}`} target="_blank">
                 <ExternalLink className="size-4 ml-3" />
               </Link>{' '}
-              <Badge variant={'outline'}>26 años</Badge>
-              <Badge variant={'outline'}>Masculino</Badge>
-              {data.patient?.biometric.organDonor === OrganDonors.Yes && <Badge variant={'outline'}>Donador</Badge>}
+              <Badge variant={'outline'}>26 years</Badge>
+              <Badge variant={'outline'}>Male</Badge>
+              {data.patient?.biometric.organDonor === OrganDonors.Yes && <Badge variant={'outline'}>Donor</Badge>}
               <Badge variant={'outline'}>{data.patient?.biometric.bloodType}</Badge>
             </SheetTitle>
           </div>
@@ -65,15 +65,15 @@ export const HeaderDoctor = ({ data }: { data: Primitives<Appointment> }) => {
       </SheetHeader>
       <div className="flex gap-2 px-1 border-b py-2">
         <div className="flex justify-start items-center gap-2 text-sm">
-          <p className="">Estado civil:</p>
+          <p className="">Marital Status:</p>
           <Badge variant={'outline'}>{data.patient?.demographic.civilStatus}</Badge>
         </div>
         <div className="flex justify-start items-center gap-2 text-sm">
-          <p className="">Educación:</p>
+          <p className="">Education:</p>
           <Badge variant={'outline'}>{data.patient?.demographic.educativeLevel}</Badge>
         </div>
         <div className="flex justify-start items-center gap-2 text-sm">
-          <p className="">Ocupación:</p>
+          <p className="">Occupation:</p>
           <Badge variant={'outline'}>{data.patient?.demographic.occupation}</Badge>
         </div>
       </div>

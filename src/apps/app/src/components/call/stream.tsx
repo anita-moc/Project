@@ -140,7 +140,7 @@ export const MyUILayout = () => {
     return (
       <div className="relative w-full flex-1">
         <div className="h-full w-full flex flex-col justify-center items-center gap-3">
-          <p className="text-lg font-semibold">La llamada ha finalizado</p>
+          <p className="text-lg font-semibold">The call has ended</p>
         </div>
       </div>
     );
@@ -156,7 +156,7 @@ export const MyUILayout = () => {
           </p>
           <Button onClick={joinCall} className="rounded-full gap-3" variant={'outline'}>
             <PhoneIncoming className="size-4" />
-            Entrar
+            Enter
           </Button>
         </div>
       </div>
@@ -197,7 +197,7 @@ export const MyParticipantList = (props: { participants: StreamVideoParticipant[
   if (participants.length === 0) {
     return (
       <div className="flex h-full w-full justify-center items-center">
-        <p className="text-lg font-semibold">Esperando a que alguien se una a la llamada</p>
+        <p className="text-lg font-semibold">Waiting for someone to join the call</p>
       </div>
     );
   }
@@ -307,7 +307,7 @@ const ActionsBar = () => {
               </Button>
             </TooltipTrigger>
             <TooltipContent sideOffset={15} className="text-[10px] px-2 py-1 rounded-sm font-medium">
-              <p>Mutear</p>
+              <p>Mute</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -329,7 +329,7 @@ const ActionsBar = () => {
             </TooltipTrigger>
 
             <TooltipContent sideOffset={15} className="text-[10px] px-2 py-1 rounded-sm font-medium">
-              <p>Cámara</p>
+              <p>Camera</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -359,7 +359,7 @@ const ActionsBar = () => {
               </Button>
             </TooltipTrigger>
             <TooltipContent sideOffset={15} className="text-[10px] px-2 py-1 rounded-sm font-medium">
-              <p>Salir</p>
+              <p>END</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -388,7 +388,7 @@ const DevicesList = () => {
             </DropdownMenuTrigger>
           </TooltipTrigger>
           <TooltipContent sideOffset={15} className="text-[10px] px-2 py-1 rounded-sm font-medium">
-            <p>Configuraciones</p>
+            <p>Settings</p>
           </TooltipContent>
         </Tooltip>
         <DropdownMenuContent className="w-[300px] rounded-none" side="top" align="start">
@@ -398,7 +398,7 @@ const DevicesList = () => {
                 <div className="w-4 h-4 mr-2 flex justify-center items-center">
                   <Video />
                 </div>
-                <span className="text-sm">Selecciona la cámara</span>
+                <span className="text-sm">Select the camera</span>
               </DropdownMenuSubTrigger>
               <DropdownMenuPortal>
                 <DropdownMenuSubContent className="rounded-none">
@@ -426,7 +426,7 @@ const DevicesList = () => {
                 <div className="w-4 h-4 mr-2 flex justify-center items-center">
                   <Mic />
                 </div>
-                <span className="text-sm">Selecciona el micrófono</span>
+                <span className="text-sm">Select the microphone</span>
               </DropdownMenuSubTrigger>
               <DropdownMenuPortal>
                 <DropdownMenuSubContent className="rounded-none">
@@ -454,7 +454,8 @@ const DevicesList = () => {
                 <div className="w-4 h-4 mr-2 flex justify-center items-center">
                   <Volume2Icon />
                 </div>
-                <span className="text-sm">Selecciona el parlante</span>
+                <span className="text-sm">
+                Select the speaker</span>
               </DropdownMenuSubTrigger>
               <DropdownMenuPortal>
                 <DropdownMenuSubContent className="rounded-none">
@@ -591,7 +592,7 @@ const SessionTimer = () => {
   }, [hasReachedZero]);
 
   if (hasReachedZero) {
-    return <div>El tiempo se ha acabado la llamada se cerrará en 1 minuto</div>;
+    return <div>Time is up, the call will be closed in 1 minute.</div>;
   }
 
   return (
@@ -645,7 +646,7 @@ const ExtendSessionButton = ({ duration }: { duration: number }) => {
         </TooltipTrigger>
 
         <TooltipContent sideOffset={15} className="text-[10px] px-2 py-1 rounded-sm font-medium">
-          <p>Tiempo restante en la llamada, extiéndela</p>
+          <p>Time remaining on the call, please extend it</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
@@ -692,8 +693,8 @@ const Info = () => {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="rounded-none" alignOffset={10} sideOffset={20}>
-        Tanto las grabaciones como las transcripciones de la llamada las podrás encontrar en la sección de historial
-      </PopoverContent>
+      Both the Recordings and Transcripts of the call can be found in the history section.
+       </PopoverContent>
     </Popover>
   );
 };

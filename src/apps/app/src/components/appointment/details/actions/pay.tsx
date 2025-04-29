@@ -14,7 +14,7 @@ const Pay = ({ status, id }: { status: string; id: string }) => {
     <Link href={`/api/payment/appointment?appointmentId=${id}`}>
       <Button className="flex-1 w-full h-9 gap-2" variant={'secondary'}>
         <Receipt className="size-4" />
-        Pagar
+        Pay
       </Button>
     </Link>
   );

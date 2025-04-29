@@ -12,7 +12,7 @@ const Confirm = ({ status }: { status: string }) => {
   return (
     <Button variant={'secondary'} className="h-9 gap-2">
       <Check />
-      Confirmar
+      Confirm
     </Button>
   );
 };

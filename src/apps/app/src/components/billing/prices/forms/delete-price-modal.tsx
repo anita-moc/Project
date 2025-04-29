@@ -27,7 +27,7 @@ const DeletePriceModal = ({
   const router = useRouter();
   const deletePrice = useAction(removePrice, {
     onSuccess: () => {
-      toast.success('Tarifa eliminada');
+      toast.success('Rate eliminated');
       router.refresh();
       setOpen(false);
     },
@@ -36,9 +36,9 @@ const DeletePriceModal = ({
     <AlertDialog open={isOpen} onOpenChange={setOpen}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Estas seguro que deseas eliminar la tarifa?</AlertDialogTitle>
+          <AlertDialogTitle>Are you sure you want to remove the rate?</AlertDialogTitle>
           <AlertDialogDescription>
-            Al eliminar una tarifa, todos los productos relacionados con esta tarifa serán eliminadas
+            When you delete a rate, all products related to this rate will be deleted.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -51,7 +51,7 @@ const DeletePriceModal = ({
             className=""
             type="submit"
           >
-            {deletePrice.status === 'executing' ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Eliminar'}
+            {deletePrice.status === 'executing' ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Delete'}
           </Button>
         </AlertDialogFooter>
       </AlertDialogContent>

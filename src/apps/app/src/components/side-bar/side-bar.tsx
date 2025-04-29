@@ -116,19 +116,19 @@ export const sideBarItems = [
     routes: [
       {
         icon: LayoutDashboard,
-        title: 'Inicio',
+        title: 'Dashboard',
         url: '/dashboard',
         roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
       },
       {
         icon: Calendar,
-        title: 'Calendario',
+        title: 'Calendar',
         url: '/schedule',
         roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
       },
       {
         icon: BookMarked,
-        title: 'Citas',
+        title: 'Appointments',
         url: '/appointments',
         roles: ['DOCTOR', 'PATIENT'],
       },
@@ -140,13 +140,13 @@ export const sideBarItems = [
       },
       {
         icon: History,
-        title: 'Historial medico',
+        title: 'Medical History',
         url: '/medical-history',
         roles: ['PATIENT'],
       },
       {
         icon: Users,
-        title: 'Pacientes',
+        title: 'Patients',
         url: '/patients',
         roles: ['DOCTOR', 'HOSPITAL'],
       },
@@ -158,7 +158,7 @@ export const sideBarItems = [
       },
       {
         icon: PieChart,
-        title: 'Reportes',
+        title: 'Reports',
         url: '/reports',
         roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
       },
@@ -169,13 +169,13 @@ export const sideBarItems = [
     routes: [
       {
         icon: MessagesSquare,
-        title: 'Mensajería',
+        title: 'Messages',
         url: '/chats',
         roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
       },
       {
         icon: CircleDollarSign,
-        title: 'Facturación',
+        title: 'Billing',
         url: '/billing',
         roles: ['DOCTOR', 'PATIENT', 'HOSPITAL'],
       },

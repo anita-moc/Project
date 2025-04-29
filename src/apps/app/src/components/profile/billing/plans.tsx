@@ -15,7 +15,7 @@ export function Plans({ discountPrice }: { discountPrice?: number }) {
       <div className="flex flex-col p-6 border bg-background">
         <h2 className="text-xl mb-2 text-left">Free</h2>
         <div className="mt-1 flex items-baseline">
-          <span className="text-2xl font-medium tracking-tight">Gratis</span>
+          <span className="text-2xl font-medium tracking-tight">Free</span>
         </div>
 
         <div className="mt-4">
@@ -87,7 +87,7 @@ export function Plans({ discountPrice }: { discountPrice?: number }) {
       </div>
       {/* Starter Plan */}
       <div className="flex flex-col p-6 border border-primary bg-background">
-        <h2 className="text-xl mb-2 text-left">Estándar</h2>
+        <h2 className="text-xl mb-2 text-left">Standard</h2>
         <div className="mt-1 flex items-baseline">
           <span className="text-2xl font-medium tracking-tight">$10</span>
           <span className="ml-1 text-xl font-medium">/mo</span>

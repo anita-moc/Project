@@ -34,7 +34,7 @@ export const EducationLevelSection = ({ educativeLevel, id }: EducationLevelValu
     try {
       await updateDemographic({ patientId: id, demographic: data });
       setIsEditing(false);
-      toast.success('Nivel educativo actualizado correctamente.');
+      toast.success('Educational level updated correctly.');
       router.refresh();
     } catch (error) {
       console.log(error);
@@ -50,9 +50,9 @@ export const EducationLevelSection = ({ educativeLevel, id }: EducationLevelValu
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Nivel educativo</CardTitle>
+              <CardTitle>Educational level</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                {isEditing ? 'Selecciona tu nivel educativo.' : 'Tu nivel educativo es importante para nosotros'}
+                {isEditing ? 'Select your educational level.': 'Your educational level is important to us'}
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{selectedCivilStatus?.name}</p>
@@ -84,7 +84,7 @@ export const EducationLevelSection = ({ educativeLevel, id }: EducationLevelValu
             </div>
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
-            <p className="text-muted-foreground text-xs">Esto es solo para fines estadísticos.</p>
+            <p className="text-muted-foreground text-xs">This is for statistical purposes only.</p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
                 <Button
@@ -94,7 +94,7 @@ export const EducationLevelSection = ({ educativeLevel, id }: EducationLevelValu
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -102,7 +102,7 @@ export const EducationLevelSection = ({ educativeLevel, id }: EducationLevelValu
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>
@@ -115,18 +115,18 @@ export const EducationLevelSection = ({ educativeLevel, id }: EducationLevelValu
 const educationLevels = [
   {
     id: 'PRIMARY',
-    name: 'Primaria',
+    name: 'Primary',
   },
   {
     id: 'SECONDARY',
-    name: 'Secundaria',
+    name: 'Secondary',
   },
   {
     id: 'TECHNICAL',
-    name: 'Técnico',
+    name: 'Technical',
   },
   {
     id: 'UNIVERSITY',
-    name: 'Universitario',
+    name: 'University',
   },
 ];

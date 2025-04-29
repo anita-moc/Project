@@ -1,23 +1,23 @@
-# Diagrama de ciclo de vida
+# Life Cycle Diagram
 
-El siguiente diagrama muestra el ciclo de vida de una cita médica en el sistema. El ciclo de vida comienza con la creación de una cita agendada y termina con la finalización de la cita. En el diagrama se muestran los estados por los que puede pasar una cita y las transiciones entre estos estados.
+The following diagram shows the life cycle of a medical appointment in the system. The life cycle begins with the creation of a scheduled appointment and ends with the completion of the appointment. The diagram shows the different statuses that an appointment can go through and the transitions between these statuses.
 
 ```mermaid
 stateDiagram-v2
-    [*] --> SCHEDULED: Cita agendada
-    SCHEDULED --> CONFIRMED: Doctor confirma la cita
-    SCHEDULED --> CANCELLED: Doctor o paciente cancela la cita
-    CONFIRMED --> PAYED: Paciente realiza el pago
-    CONFIRMED --> CANCELLED: Paciente o Doctor cancela la cita
-    PAYED --> READY: Cita lista para comenzar
-    PAYED --> CANCELLED: Paciente o Doctor cancela la cita (reembolso)
-    READY --> STARTED: Cita comienza
-    READY --> MISSED: Paciente no se presenta
-    STARTED --> FINISHED: Cita finalizada
-    STARTED --> CANCELLED: Cita cancelada durante la consulta
-    FINISHED --> [*]: Cita completada
-    CANCELLED --> [*]: Cita cancelada
-    CANCELLED --> SCHEDULED: Paciente reagenda la cita
-    MISSED --> [*]: Cita perdida
-    MISSED --> SCHEDULED: Paciente reagenda la cita
+    [*] --> SCHEDULED: Schedule appointment
+    SCHEDULED --> CONFIRMED: Doctor confirms appointment
+    SCHEDULED --> CANCELLED: Doctor or Patient cancels appointment
+    CONFIRMED --> PAYED: Patient makes payment
+    CONFIRMED --> CANCELLED: Patient or Doctor cancels appointment
+    PAYED --> READY: Appointment ready to begin
+    PAYED --> CANCELLED: Patient or Doctor cancels appointment (refund)
+    READY --> STARTED: Appointment begins
+    READY --> MISSED: Patient no-show
+    STARTED --> FINISHED: Appointment finished
+    STARTED --> CANCELLED: Appointment cancelled during consultation
+    FINISHED --> [*]: Appointment completed
+    CANCELLED --> [*]: Appointment cancelled
+    CANCELLED --> SCHEDULED: Patient reschedules appointment
+    MISSED --> [*]: Appointment missed
+    MISSED --> SCHEDULED: Patient reschedules appointment
 ```

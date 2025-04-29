@@ -34,8 +34,8 @@ const NotificationControl = ({}) => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-4">
           <CardHeader>
-            <CardTitle>Notificaciones</CardTitle>
-            <p className="text-muted-foreground text-sm mt-5">Administra tu configuración de notificaciones</p>
+            <CardTitle>Notifications</CardTitle>
+            <p className="text-muted-foreground text-sm mt-5">Manage your notification settings</p>
             <FormField
               control={form.control}
               name="communication_emails"
@@ -99,7 +99,7 @@ const NotificationControl = ({}) => {
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              Puedes cambiar tus preferencias de notificación en cualquier momento.
+            You can change your notification preferences at any time.
             </p>
             <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
               {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}

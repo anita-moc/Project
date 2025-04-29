@@ -29,7 +29,7 @@ interface TimeSlot {
 }
 
 const paymentMethods = [
-  { id: 'mobile', name: 'Pago móvil' },
+  { id: 'mobile', name: 'Mobile Money' },
   { id: 'visa', name: 'Visa' },
   { id: 'paypal', name: 'PayPal' },
   { id: 'bitcoin', name: 'Bitcoin' },
@@ -37,11 +37,12 @@ const paymentMethods = [
 
 const formSchema = z.object({
   date: z.date(),
-  time: z.string().min(5, 'Selecciona una hora'),
-  motive: z.string().min(2, 'Describe tus síntomas'),
-  paymentMethod: z.string().min(2, 'Selecciona un método de pago'),
-  priceId: z.string().min(2, 'Selecciona un precio'),
+  time: z.string().min(5, 'Select a time'),
+  motive: z.string().min(2, 'Describe your symptom'),
+  paymentMethod: z.string().min(2, 'Select a payment method'),
+  priceId: z.string().min(2, 'Select a price'),
 });
+
 
 export default function DoctorAppointment({
   doctor,
@@ -107,12 +108,13 @@ export default function DoctorAppointment({
         symptoms: selectedSymptoms.map((s) => symptoms.find((ss) => ss.name === s)?.id!),
       });
 
-      toast.success('Cita creada correctamente');
+      toast.success('Appointment created successfully');
       router.push(`/appointments?id=${id}`);
-    } catch (error) {
-      console.log(error);
-      toast.error('Ha ocurrido un error al agendar la cita');
-    }
+      } catch (error) {
+        console.log(error);
+        toast.error('An error occurred while scheduling the appointment');
+      }
+      
   };
 
   if (!doctor) {
@@ -150,7 +152,7 @@ export default function DoctorAppointment({
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="w-full rounded-none">
-                            <SelectValue placeholder="Tipo de consulta" />
+                            <SelectValue placeholder="Query type" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent className="rounded-none">
@@ -202,7 +204,7 @@ export default function DoctorAppointment({
                     );
                   }}
                   options={symptoms.map(transformOption)}
-                  placeholder="Síntomas"
+                  placeholder="Symptom"
                 />
                 <div className="flex items-center gap-2 flex-wrap my-6">
                   {selectedSymptoms.map((symptom, index) => (
@@ -223,7 +225,7 @@ export default function DoctorAppointment({
                     <FormItem className="my-2">
                       <FormControl>
                         <Textarea
-                          placeholder="Describe la razón de tu consulta aquí"
+                          placeholder="Describe the reason for your consultation here"
                           {...field}
                           className="min-h-[100px] rounded-none"
                         />
@@ -242,7 +244,8 @@ export default function DoctorAppointment({
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="w-full rounded-none">
-                            <SelectValue placeholder="Selecciona un método de pago" />
+                          <SelectValue placeholder="Select a payment method" />
+
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent className="rounded-none">
@@ -265,7 +268,7 @@ export default function DoctorAppointment({
             type="submit"
             disabled={form.formState.isSubmitting || !form.formState.isValid}
           >
-            {form.formState.isSubmitting ? <Loader2 className="size-4 animate-spin" /> : 'Agendar cita'}
+            {form.formState.isSubmitting ? <Loader2 className="size-4 animate-spin" /> : 'Book appointment'}
           </Button>
         </form>
       </Form>

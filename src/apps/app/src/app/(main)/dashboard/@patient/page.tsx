@@ -17,15 +17,15 @@ const Page = () => {
           <div className="w-full flex items-center gap-4">
             <Link href={'/book'}>
               <Button className="rounded-none gap-2" variant="outline">
-                Agendar <Calendar />
+                Schedule <Calendar />
               </Button>
             </Link>
             <Button className="rounded-none gap-2" variant="outline">
-              Informar <PlusCircle />{' '}
+              Report <PlusCircle />{' '}
             </Button>
           </div>
           <div className="w-full flex-col gap-2 flex">
-            <p className="text-lg font-semibold mb-5">Indicadores</p>
+            <p className="text-lg font-semibold mb-5">Indicators</p>
             <div className="flex justify-between items-center gap-4">
               <BloodPressure />
               <Glucose />

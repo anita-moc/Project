@@ -52,15 +52,16 @@ const ChangePasswordForm = ({}) => {
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Contraseña</CardTitle>
-              <p className="text-muted-foreground text-sm mt-5">Cambia tu contraseña para mantener tu cuenta segura.</p>
+              <CardTitle>Password</CardTitle>
+              <p className="text-muted-foreground text-sm mt-5">Change your password to keep your account secure.
+              </p>
               <div className="flex flex-col w-full justify-between items-center gap-3 mt-6">
                 <FormField
                   control={form.control}
                   name="newPassword"
                   render={({ field }) => (
                     <FormItem className="flex-1 w-full">
-                      <FormLabel>Nueva contraseña</FormLabel>
+                      <FormLabel>New Password</FormLabel>
                       <FormControl>
                         <Input {...field} className="rounded-none"></Input>
                       </FormControl>
@@ -73,7 +74,7 @@ const ChangePasswordForm = ({}) => {
                   name="confirmPassword"
                   render={({ field }) => (
                     <FormItem className="flex-1  w-full">
-                      <FormLabel>Confirma la contraseña</FormLabel>
+                      <FormLabel>Confirm Password</FormLabel>
                       <FormControl>
                         <Input {...field} className="rounded-none"></Input>
                       </FormControl>
@@ -86,10 +87,10 @@ const ChangePasswordForm = ({}) => {
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              Al hacer clic en Guardar, aceptas nuestra Política de privacidad y nuestros Términos de servicio.
+            By clicking Keep, you agree to our Privacy Policy and Terms of Service.
             </p>
             <Button disabled={!isValid || isSubmitting} variant="destructive" type="submit" className="rounded-none">
-              {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar'}
+              {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Keep'}
             </Button>
           </CardFooter>
         </form>

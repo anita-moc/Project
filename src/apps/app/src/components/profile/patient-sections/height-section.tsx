@@ -38,7 +38,7 @@ export const HeightSection = ({ height, id }: HeightValue & { id: string }) => {
         },
       });
       setIsEditing(false);
-      toast.success('Altura actualizada correctamente');
+      toast.success('Height updated successfully');
       router.refresh();
     } catch (error) {
       console.log(error);
@@ -52,9 +52,9 @@ export const HeightSection = ({ height, id }: HeightValue & { id: string }) => {
         <form action="" onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader className="">
             <div>
-              <CardTitle>Altura</CardTitle>
+              <CardTitle>Height</CardTitle>
               <p className="text-muted-foreground text-sm mt-5">
-                {isEditing ? 'Ingresa tu altura. Este número es público.' : 'Tu altura es pública'}
+                {isEditing ? 'Enter your height. This number is public.' : 'Your height is public information.'}
               </p>
               {!isEditing ? (
                 <p className="text-primary font-bold mt-3">{form.getValues('height')} mts</p>
@@ -76,8 +76,7 @@ export const HeightSection = ({ height, id }: HeightValue & { id: string }) => {
           </CardHeader>
           <CardFooter className="border-t pt-4 flex justify-between items-start gap-2 md:items-center flex-col md:flex-row">
             <p className="text-muted-foreground text-xs">
-              Este dato es para que los doctores puedan tener una mejor referencia de tu salud.
-            </p>
+            This information is so that doctors can have a better understanding of your health.</p>
             {isEditing ? (
               <div className="flex justify-end items-center gap-3">
                 <Button
@@ -87,7 +86,7 @@ export const HeightSection = ({ height, id }: HeightValue & { id: string }) => {
                   }}
                   className="rounded-none"
                 >
-                  Cancelar
+                  Cancel
                 </Button>
                 <Button disabled={!isValid || isSubmitting} type="submit" className="rounded-none">
                   {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
@@ -95,7 +94,7 @@ export const HeightSection = ({ height, id }: HeightValue & { id: string }) => {
               </div>
             ) : (
               <Button onClick={toggleEdit} className="rounded-none">
-                Editar
+               Edit
               </Button>
             )}
           </CardFooter>

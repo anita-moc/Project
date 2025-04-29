@@ -82,10 +82,10 @@ const AppointmentDetailsSheet = ({ data, isOpen, setOpen }: Props) => {
                 General
               </TabsTrigger>
               <TabsTrigger className="data-[state=active]:bg-secondary " value="indications">
-                Indicaciones
+                Indications
               </TabsTrigger>
               <TabsTrigger className="data-[state=active]:bg-secondary " value="history">
-                Registro
+                Records
               </TabsTrigger>
             </TabsList>
             <TabsContent value="general">
@@ -103,7 +103,7 @@ const AppointmentDetailsSheet = ({ data, isOpen, setOpen }: Props) => {
                 <div className="flex justify-between items-center gap">
                   <div className="flex items-center gap-2 text-sm font-light text-muted-foreground">
                     <Shapes className="size-4" />
-                    Tipo de consulta
+                    Query type
                   </div>
                   <div className="flex justify-start items-center gap-3">
                     <div className="size-3 rounded-lg" style={{ backgroundColor: data?.type?.color }}></div>
@@ -113,21 +113,21 @@ const AppointmentDetailsSheet = ({ data, isOpen, setOpen }: Props) => {
                 <div className="flex justify-between items-center gap">
                   <div className="flex items-center gap-2 text-sm font-light text-muted-foreground">
                     <Clock className="size-4" />
-                    Hora
+                    Hour
                   </div>
                   <span className="">{format(data?.date ?? new Date(), 'p')}</span>
                 </div>
                 <div className="flex justify-between items-center gap">
                   <div className="flex items-center gap-2 text-sm font-light text-muted-foreground">
                     <Stethoscope className="size-4" />
-                    Especialidad
+                    Specialty
                   </div>
                   <span className="">{data?.specialty?.name}</span>
                 </div>
                 <CopyInput value={`https://helsa.com/appointments/appointments/${data?.id}`} />
                 <Link href={'https://maps.google.com'} target="_blank" className="w-full">
                   <Button className="h-9 w-full mt-3 gap-2" variant={'outline'}>
-                    Calle la sardina, Pampatar, Nueva Esparta
+                   Nairobi,Kasarani Mwiki Town opposite ACK Church
                     <MapPin className="size-4" />
                   </Button>
                 </Link>
@@ -136,7 +136,7 @@ const AppointmentDetailsSheet = ({ data, isOpen, setOpen }: Props) => {
                 <AccordionItem value="attachments">
                   <AccordionTrigger className="hover:no-underline">
                     <div className="flex justify-start items-center gap-2">
-                      Archivos y adjuntos <Paperclip className="size-4" />
+                      Files and attachments <Paperclip className="size-4" />
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="flex flex-col gap-3">
@@ -146,7 +146,7 @@ const AppointmentDetailsSheet = ({ data, isOpen, setOpen }: Props) => {
                 <AccordionItem value="notes">
                   <AccordionTrigger className="hover:no-underline">
                     <div className="flex justify-start items-center gap-2">
-                      Notas <StickyNote className="size-4" />
+                      Notes <StickyNote className="size-4" />
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="flex flex-col gap-3">
@@ -158,7 +158,7 @@ const AppointmentDetailsSheet = ({ data, isOpen, setOpen }: Props) => {
             <TabsContent value="indications">
               <Button className="gap-2" variant={'secondary'}>
                 <Download className="" />
-                Descargar receta
+                Download Receipt
               </Button>
               <Suspense
                 fallback={

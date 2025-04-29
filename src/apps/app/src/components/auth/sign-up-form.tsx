@@ -24,8 +24,20 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import Lottie from 'react-lottie';
 import { z } from 'zod';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
+
+// Create a shallow clone of the animation data to make it extensible
+const defaultAnimationOptions = {
+  loop: false,
+  autoplay: true,
+  animationData: JSON.parse(JSON.stringify(successAnimation)),
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
 
 const formSchema = z
   .object({
@@ -76,15 +88,17 @@ export default function SignUpForm() {
         image: undefined,
       });
       console.log(res);
-      toast.error('A un solo paso de poder iniciar');
-      setVerification({ ...verification, state: 'pending' });
-    } catch (error) {
+     // toast.error('Just one step away from being able to start');
+     // setVerification({ ...verification, state: 'pending' });
+      setShowSuccessModal(true); // Directly show success modal
+    } 
+     catch (error) {
       console.error(JSON.stringify(error, null, 2));
       toast.error('An error occurred. Please try again later.');
     }
   };
 
-  const handleVerification = async () => {
+ /* const handleVerification = async () => {
     try {
       setVerifying(true);
       const user = await authClient.emailOtp.verifyEmail({
@@ -105,6 +119,7 @@ export default function SignUpForm() {
     }
   };
 
+  */
   const onOauthPress = async (strategy: 'google' | 'facebook') => {
     try {
       await authClient.signIn.social({
@@ -161,7 +176,7 @@ export default function SignUpForm() {
         <form action="" className="w-full" onSubmit={form.handleSubmit(onSubmit)}>
           <Card className="border-none shadow-none w-full">
             <CardHeader>
-              <CardTitle>Regístrate en Helsa</CardTitle>
+              <CardTitle>Register on Gonurse</CardTitle>
             </CardHeader>
             <CardContent className="">
               <div className="flex justify-between gap-5">
@@ -170,7 +185,7 @@ export default function SignUpForm() {
                   name="firstName"
                   render={({ field }) => (
                     <FormItem className="my-2 flex-1">
-                      <FormLabel className="text-sm">Nombre</FormLabel>
+                      <FormLabel className="text-sm">First Name</FormLabel>
                       <FormControl>
                         <Input {...field} className=""></Input>
                       </FormControl>
@@ -183,7 +198,7 @@ export default function SignUpForm() {
                   name="lastName"
                   render={({ field }) => (
                     <FormItem className="my-2 flex-1">
-                      <FormLabel className="text-sm">Apellido</FormLabel>
+                      <FormLabel className="text-sm">Last name</FormLabel>
                       <FormControl>
                         <Input {...field} className=""></Input>
                       </FormControl>
@@ -211,7 +226,7 @@ export default function SignUpForm() {
                 name="password"
                 render={({ field }) => (
                   <FormItem className="my-2">
-                    <FormLabel className="text-sm">Contraseña</FormLabel>
+                    <FormLabel className="text-sm">Password</FormLabel>
                     <FormControl>
                       <PasswordInput {...field} autoComplete="current-password" className=""></PasswordInput>
                     </FormControl>
@@ -224,7 +239,7 @@ export default function SignUpForm() {
                 name="confirmPassword"
                 render={({ field }) => (
                   <FormItem className="my-2">
-                    <FormLabel className="text-sm">Confirma tu contraseña</FormLabel>
+                    <FormLabel className="text-sm">Confirm your Password</FormLabel>
                     <FormControl>
                       <PasswordInput {...field} autoComplete="current-password" className=""></PasswordInput>
                     </FormControl>
@@ -250,10 +265,10 @@ export default function SignUpForm() {
             <CardFooter>
               <div className="grid w-full gap-y-4">
                 <Button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Crear cuenta'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Create Account'}
                 </Button>
                 <Button variant="link" size="sm" asChild>
-                  <Link href="/sign-in">¿Ya tienes una cuenta? Inicia sesión</Link>
+                  <Link href="/sign-in">Already have an account? Sign in</Link>
                 </Button>
               </div>
             </CardFooter>
@@ -263,20 +278,13 @@ export default function SignUpForm() {
       <AlertDialog open={showSuccessModal}>
         <AlertDialogContent>
           <Lottie
-            options={{
-              autoplay: true,
-              loop: false,
-              animationData: successAnimation,
-              rendererSettings: {
-                preserveAspectRatio: 'xMidYMid slice',
-              },
-            }}
+            options={defaultAnimationOptions}
             style={{ width: 300, height: 300 }}
           ></Lottie>
           <AlertDialogHeader className="my-0">
-            <AlertDialogTitle className="text-center text-2xl">Verificado!</AlertDialogTitle>
+            <AlertDialogTitle className="text-center text-2xl">Verified!</AlertDialogTitle>
             <AlertDialogDescription className="text-center text-lg">
-              Has verificado tu correo electrónico exitosamente
+            You have successfully verified your email
             </AlertDialogDescription>
           </AlertDialogHeader>
 
@@ -289,7 +297,7 @@ export default function SignUpForm() {
                 }}
                 size="lg"
               >
-                Continuar
+                Continue
               </Button>
             </AlertDialogAction>
           </AlertDialogFooter>

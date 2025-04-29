@@ -48,25 +48,25 @@ const patientsColumns: ColumnDef<Patient>[] = [
   },
   {
     accessorKey: 'name',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Nombre" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Name" />,
     enableSorting: true,
     enableHiding: true,
   },
   {
     accessorKey: 'age',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Edad" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Age" />,
     enableSorting: true,
     enableHiding: true,
   },
   {
     accessorKey: 'type',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Tipo" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Type" />,
     enableSorting: true,
     enableHiding: true,
   },
   {
     accessorKey: 'lastVisit',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Ultima Visita" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Last Visit" />,
     enableSorting: true,
     enableHiding: true,
   },
@@ -85,11 +85,11 @@ const patientsColumns: ColumnDef<Patient>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="rounded-none">
             <DropdownMenuItem onClick={() => navigator.clipboard.writeText(payment.id)}>
-              Ver historial medico
+              View Medical History
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Agendar cita</DropdownMenuItem>
-            <DropdownMenuItem>Solicitar pago</DropdownMenuItem>
+            <DropdownMenuItem>Schedule Appointment</DropdownMenuItem>
+            <DropdownMenuItem>Request Payment</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -99,8 +99,8 @@ const patientsColumns: ColumnDef<Patient>[] = [
 
 export const statuses = [
   {
-    value: 'Consulta',
-    label: 'Consulta',
+    value: 'Consultation',
+    label: 'Consultation',
     icon: PencilIcon,
   },
   {
@@ -109,8 +109,8 @@ export const statuses = [
     icon: EyeIcon,
   },
   {
-    value: 'Emergencia',
-    label: 'Emergencia',
+    value: 'Emergency',
+    label: 'Emergency',
     icon: AlertCircle,
   },
 ];
@@ -128,7 +128,7 @@ const data = [
     name: 'Maria Perez',
     age: 30,
     lastVisit: '2022-01-01',
-    type: 'Consulta',
+    type: 'Consultation',
   },
   {
     id: '3',
@@ -142,7 +142,7 @@ const data = [
     name: 'Luis Perez',
     age: 60,
     lastVisit: '2022-01-01',
-    type: 'Consulta',
+    type: 'Consultation',
   },
   {
     id: '5',
@@ -179,11 +179,12 @@ const PatientsTable = () => {
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
   });
+  
   return (
     <div className="space-y-4 border bg-background rounded-md p-4">
       <div className="flex flex-col gap-1 mb-4">
-        <p className="text-lg font-semibold">Pacientes</p>
-        <p className="text-sm text-muted-foreground">Aquí puedes ver el historial de citas de tus pacientes</p>
+        <p className="text-lg font-semibold">Patients</p>
+        <p className="text-sm text-muted-foreground">Here you can view the appointment history of your patients</p>
       </div>
       <div className="flex justify-between items-center">
         <div className="flex flex-1 items-center space-x-2">

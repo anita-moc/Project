@@ -75,7 +75,7 @@ export function NavUser() {
             <DropdownMenuGroup>
               <DropdownMenuItem className="gap-2 text-sm rounded-sm cursor-pointer">
                 <Sparkles className="size-4" />
-                Mejora a pro
+                Upgrade to pro
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
@@ -85,12 +85,13 @@ export function NavUser() {
                 onClick={() => router.push('/profile')}
               >
                 <User className="size-4" />
-                Perfil
+                Profile
               </DropdownMenuItem>
 
               <DropdownMenuItem className="gap-2 text-sm rounded-sm cursor-pointer">
                 <Bell className="size-4" />
-                Notificaciones
+                
+              Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
@@ -98,7 +99,7 @@ export function NavUser() {
               <div className="flex justify-between items-center gap-3 py-3 pr-3">
                 <div className="ml-2 flex justify-start items-center gap-2">
                   <SunMoon className="size-4" />
-                  Tema
+                  Issue
                 </div>
                 <Select defaultValue={theme} onValueChange={changeTheme}>
                   <SelectTrigger className=" w-1/2 p-2 h-[25px]">
@@ -121,7 +122,7 @@ export function NavUser() {
             <DropdownMenuSeparator />
             <DropdownMenuItem className="gap-2 text-sm rounded-sm cursor-pointer" onClick={onClick}>
               <LogOut className="size-4" />
-              Salir
+              LOG OUT
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

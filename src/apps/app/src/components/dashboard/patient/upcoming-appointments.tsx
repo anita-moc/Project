@@ -23,7 +23,7 @@ export function UpcomingAppointments() {
                       <HeartPulse className="size-5" />
                     </div>
                     <div>
-                      <p className="">{appointment.especialidad}</p>
+                      <p className="">{appointment.Specialty}</p>
                       <p className="text-xs text-muted-foreground">
                         {appointment.time} {appointment.doctor}
                       </p>
@@ -48,27 +48,27 @@ const appointments = [
     date: new Date(),
     time: '9:00 AM',
     type: 'Consulta',
-    especialidad: 'Dermatólogo',
+    Specialty: 'Dermatólogo',
   },
   {
     doctor: 'Dr. Carlos López',
     date: new Date(),
     time: '10:00 AM',
     type: 'Consulta',
-    especialidad: 'Pediatra',
+    Specialty: 'Pediatra',
   },
   {
     doctor: 'Dr. María González',
     date: new Date(),
     time: '11:00 AM',
     type: 'Consulta',
-    especialidad: 'Ginecólogo',
+    Specialty: 'Ginecólogo',
   },
   {
     doctor: 'Dr. Juan Martínez',
     date: new Date(),
     time: '1:00 PM',
     type: 'Consulta',
-    especialidad: 'Neurólogo',
+    Specialty: 'Neurólogo',
   },
 ];

@@ -10,11 +10,11 @@ export function TypesSkeleton() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Nombre</TableHead>
-            <TableHead>Precio</TableHead>
-            <TableHead>Moneda</TableHead>
-            <TableHead>Duración</TableHead>
-            <TableHead>Tipo de consulta</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead>Price</TableHead>
+            <TableHead>Currency</TableHead>
+            <TableHead>Duration</TableHead>
+            <TableHead>Query type</TableHead>
           </TableRow>
         </TableHeader>
 

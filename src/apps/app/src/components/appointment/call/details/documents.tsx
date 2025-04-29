@@ -37,7 +37,7 @@ export const DocumentList = ({
       {patient && (
         <Button onClick={toggle}>
           <ClipboardMinus className="size-4" />
-          Agregar Archivo
+          Add File
         </Button>
       )}
     </>
@@ -50,12 +50,12 @@ const formSchema = z.object({
 });
 
 const documentTypes = [
-  { id: 'MEDICAL_RECORD', name: 'Historial médico' },
-  { id: 'PRESCRIPTION', name: 'Receta' },
-  { id: 'IMAGE', name: 'Imagen' },
-  { id: 'LABORATORY_RESULT', name: 'Resultado de laboratorio' },
-  { id: 'RADIOLOGY', name: 'Radiología' },
-  { id: 'OTHER', name: 'Otro' },
+  { id: 'MEDICAL_RECORD', name: 'Medical Record' },
+  { id: 'PRESCRIPTION', name: 'Prescription' },
+  { id: 'IMAGE', name: 'Image' },
+  { id: 'LABORATORY_RESULT', name: 'Laboratory Result' },
+  { id: 'RADIOLOGY', name: 'Radiology' },
+  { id: 'OTHER', name: 'Other' },
 ];
 
 export const DocumentForm = ({ data, toggle }: { data: Primitives<Appointment>; toggle: VoidFunction }) => {
@@ -82,7 +82,7 @@ export const DocumentForm = ({ data, toggle }: { data: Primitives<Appointment>; 
           filename: document.name,
         });
       }
-      toast.success('Documento agregado correctamente');
+      toast.success('Document added successfully');
       form.reset();
       setDocument(null);
       toggle();
@@ -107,7 +107,7 @@ export const DocumentForm = ({ data, toggle }: { data: Primitives<Appointment>; 
               <FormItem className="my-2">
                 <FormControl>
                   <Textarea
-                    placeholder="Describe el contenido del documento aqui"
+                    placeholder="Describe the content of the document here"
                     {...field}
                     className="min-h-[100px] "
                   />
@@ -124,7 +124,7 @@ export const DocumentForm = ({ data, toggle }: { data: Primitives<Appointment>; 
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger className="w-full ">
-                      <SelectValue placeholder="Selecciona un tipo de documento" />
+                      <SelectValue placeholder="Select a document type" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="">
@@ -147,11 +147,11 @@ export const DocumentForm = ({ data, toggle }: { data: Primitives<Appointment>; 
               }}
               className="flex-1"
             >
-              Cancelar
+              Cancel
             </Button>
 
             <Button className=" gap-3 flex-1" variant={'secondary'} disabled={!document || form.formState.isSubmitted}>
-              {form.formState.isSubmitting ? <Loader2 className="size-4 animate-spin" /> : 'Subir archivo'}
+              {form.formState.isSubmitting ? <Loader2 className="size-4 animate-spin" /> : 'Upload file'}
             </Button>
           </div>
         </form>

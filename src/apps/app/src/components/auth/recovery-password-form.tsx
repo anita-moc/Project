@@ -20,9 +20,11 @@ import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Lottie from 'react-lottie';
 import { toast } from 'sonner';
 import { z } from 'zod';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
 
 const formSchema = z.object({
   password: z.string().min(8, { message: 'Password must be at least 8 characters' }),
@@ -54,7 +56,7 @@ const RecoveryPasswordForm = () => {
       await authClient.emailOtp.sendVerificationOtp({ email, type: 'forget-password' });
       setSuccessfulCreation(true);
     } catch (error) {
-      toast.error('Error al enviar el código de verificación');
+      toast.error('Error sending verification code');
     }
   };
 
@@ -67,7 +69,7 @@ const RecoveryPasswordForm = () => {
       });
       setShowSuccessModal(true);
     } catch (error) {
-      toast.error('Error al cambiar la contraseña');
+      toast.error('Error changing password');
     }
   };
 
@@ -76,8 +78,8 @@ const RecoveryPasswordForm = () => {
       <div className="grid w-full h-full grow items-center px-20">
         <Card className="border-none shadow-none w-full">
           <CardHeader>
-            <CardTitle>Recuperación de contraseña</CardTitle>
-            <CardDescription>Ingresa tu email y te enviaremos un código de verificación</CardDescription>
+            <CardTitle>Password recovery</CardTitle>
+            <CardDescription>Enter your email and we'll send you a verification code.</CardDescription>
           </CardHeader>
           <CardContent className="">
             <Input value={email} onChange={(event) => setEmail(event.target.value)}></Input>
@@ -99,11 +101,9 @@ const RecoveryPasswordForm = () => {
         <form action="" className="w-full" onSubmit={form.handleSubmit(resetPassword)}>
           <Card className="border-none shadow-none w-full">
             <CardHeader>
-              <CardTitle>Bienvenido a Helsa</CardTitle>
+              <CardTitle>Welcome to Gonurse</CardTitle>
               <CardDescription>
-                Helsa es una plataforma que te ayuda a mantener un seguimiento de tu salud. Comienza creando una cuenta.
-              </CardDescription>
-            </CardHeader>
+             Gonurse is a platform that helps you keep track of your health. Get started by creating an account </CardHeader>
             <CardContent className="">
               <FormField
                 control={form.control}
@@ -111,7 +111,7 @@ const RecoveryPasswordForm = () => {
                 render={({ field }) => (
                   <FormItem className="my-2">
                     <FormLabel className="text-sm  font-bold text-color-foreground-secondary ">
-                      Tu nueva contraseña
+                    Your new password
                     </FormLabel>
                     <FormControl>
                       <PasswordInput {...field} autoComplete="current-password"></PasswordInput>
@@ -125,9 +125,8 @@ const RecoveryPasswordForm = () => {
                 name="code"
                 render={({ field }) => (
                   <FormItem className="my-2">
-                    <FormLabel className="text-sm  font-bold text-color-foreground-secondary ">
-                      El código de recuperación
-                    </FormLabel>
+                    <FormLabel className="text-sm  font-bold text-color-foreground-secondary ">recovery code
+                  </FormLabel>
                     <FormControl>
                       <Input {...field}></Input>
                     </FormControl>
@@ -139,7 +138,7 @@ const RecoveryPasswordForm = () => {
             <CardFooter>
               <div className="grid w-full gap-y-4">
                 <Button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Cambiar contraseña'}
+                  {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Change password'}
                 </Button>
               </div>
             </CardFooter>
@@ -160,9 +159,9 @@ const RecoveryPasswordForm = () => {
             style={{ width: 300, height: 300 }}
           ></Lottie>
           <AlertDialogHeader className="my-0">
-            <AlertDialogTitle className="text-center text-2xl">Verificado!</AlertDialogTitle>
+            <AlertDialogTitle className="text-center text-2xl">Verified!</AlertDialogTitle>
             <AlertDialogDescription className="text-center text-lg">
-              Has verificado tu correo electrónico exitosamente
+              You have successfully verified your email
             </AlertDialogDescription>
           </AlertDialogHeader>
 
@@ -175,7 +174,7 @@ const RecoveryPasswordForm = () => {
                 }}
                 size="lg"
               >
-                Ir al inicio
+                Go to Dashboard
               </Button>
             </AlertDialogAction>
           </AlertDialogFooter>

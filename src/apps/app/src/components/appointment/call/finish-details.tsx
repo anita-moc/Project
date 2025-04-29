@@ -20,8 +20,8 @@ import { Temperature } from './vitals/vitals-types/temperature';
 import { Weight } from './vitals/vitals-types/weight';
 
 const orderTypes = {
-  TEST: 'Prueba',
-  REMITTANCE: 'Remisión',
+  TEST: 'Test',
+  REMITTANCE: 'Remittance',
 };
 
 const defaultData = {
@@ -50,7 +50,7 @@ const FinishDetails = ({
         <div className="grid grid-cols-2 gap-6">
           <div className="space-y-4">
             <div>
-              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Fecha y Hora</h3>
+              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Date and Time</h3>
               <div className="flex items-center mt-1 gap-2">
                 <Calendar className="h-4 w-4 mr-2 text-primary" />
                 <span className="font-medium">
@@ -58,7 +58,7 @@ const FinishDetails = ({
                     locale: es,
                   })}{' '}
                 </span>
-                <Badge>Finalizada</Badge>
+                <Badge>Finished</Badge>
               </div>
               <div className="flex items-center mt-1 gap-2">
                 <Clock className="h-4 w-4 mr-2 text-primary" />
@@ -69,24 +69,24 @@ const FinishDetails = ({
             </div>
 
             <div>
-              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Ubicación</h3>
+              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Location</h3>
               <div className="flex items-start mt-1">
                 <MapPin className="h-4 w-4 mr-2 text-primary mt-1" />
                 <div>
-                  <p className="font-medium">Centro Médico San Rafael</p>
-                  <p className="text-sm text-muted-foreground">Av. Libertador 1250, Piso 3, Consultorio 305</p>
-                  <p className="text-sm text-muted-foreground">Ciudad de México, CDMX</p>
+                  <p className="font-medium">Mwiki Medical Center</p>
+                  <p className="text-sm text-muted-foreground">Mwiki Town opposite ACK Church</p>
+                  <p className="text-sm text-muted-foreground">Nairobi City ,Kasarani</p>
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Motivo de la Consulta</h3>
+              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Reason for Consultation</h3>
               <p className="mt-1">{appointment.motive}</p>
             </div>
           </div>
           <div className="space-y-4">
             <div>
-              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Diagnóstico</h3>
+              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Diagnosis</h3>
               <ul className="list-disc pl-5 text-sm space-y-1 mt-1">
                 {appointment.diagnostics?.map((diagnostic) => (
                   <li className="mt-1" key={diagnostic.id}>
@@ -97,7 +97,7 @@ const FinishDetails = ({
             </div>
 
             <div>
-              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Tratamiento Recomendado</h3>
+              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Recommended Treatment</h3>
               <ul className="list-disc pl-5 text-sm space-y-1 mt-1">
                 {appointment.treatments?.map((treatment) => (
                   <li key={treatment.id}>
@@ -108,7 +108,7 @@ const FinishDetails = ({
             </div>
 
             <div>
-              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Remisiones</h3>
+              <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Referrals</h3>
               <ul className="list-disc pl-5 text-sm space-y-1 mt-1">
                 {orders.map((order) => (
                   <li key={order.id}>
@@ -119,14 +119,14 @@ const FinishDetails = ({
             </div>
             <Button>
               <Printer className="h-4 w-4 mr-2" />
-              Descargar Receta
+              Download Receipt
             </Button>
           </div>
         </div>
         <Separator />
         <div className="space-y-4">
           <div>
-            <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Signos vitales</h3>
+            <h3 className="text-lg  font-medium text-[var(--color-brand-primary)]">Vital signs</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 py-4">
               <HeartRate
                 appointmentId={appointment.id}
@@ -153,18 +153,18 @@ const FinishDetails = ({
           </div>
         </div>
         <div>
-          <h3 className="text-sm font-medium text-muted-foreground mb-2">Próxima Cita</h3>
+          <h3 className="text-sm font-medium text-muted-foreground mb-2">Next Appointment</h3>
           <div className="flex items-center mt-1">
             <Calendar className="h-4 w-4 mr-2 text-primary" />
-            <span className="font-medium">Lunes, 15 de Agosto de 2023 - 11:00</span>
+            <span className="font-medium">Monday, August 15, 2025  11:00</span>
           </div>
-          <p className="text-sm mt-1">Control de presión arterial y resultados de nuevos análisis</p>
+          <p className="text-sm mt-1">Blood pressure monitoring and new analysis results</p>
         </div>
       </CardContent>
       <CardFooter className="flex items-start flex-col sm:flex-row gap-3 pt-2">
         <Button variant="outline">
           <Calendar className="h-4 w-4 mr-2" />
-          Agendar Seguimiento
+          Schedule Follow-up
         </Button>
       </CardFooter>
     </Card>

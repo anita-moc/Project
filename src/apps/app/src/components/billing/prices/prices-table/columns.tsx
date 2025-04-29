@@ -32,12 +32,12 @@ export type Prices = {
 
 export const columns: ColumnDef<Prices>[] = [
   {
-    header: 'Nombre',
+    header: 'Name',
     accessorKey: 'name',
     cell: ({ row }) => row.original.name,
   },
   {
-    header: 'Precio',
+    header: 'Price',
     accessorKey: 'amount',
     cell: ({ row }) => (
       <div className="flex space-x-2 items-center">
@@ -57,12 +57,12 @@ export const columns: ColumnDef<Prices>[] = [
     ),
   },
   {
-    header: 'Moneda',
+    header: 'Currency',
     accessorKey: 'currency',
     cell: ({ row }) => row.original.currency ?? '-',
   },
   {
-    header: 'Duración',
+    header: 'Duration',
     accessorKey: 'duration',
     cell: ({ row }) =>
       row.getValue('duration')
@@ -76,7 +76,7 @@ export const columns: ColumnDef<Prices>[] = [
         : '-',
   },
   {
-    header: 'Tipo de consulta',
+    header: 'Query type',
     accessorKey: 'type',
     cell: ({ row, table }) => {
       const type = (table.options.meta as ExtendedTableMeta).types.find((t) => t.id === row.original.typeId);

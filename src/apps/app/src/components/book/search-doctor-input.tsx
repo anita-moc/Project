@@ -133,7 +133,7 @@ const SearchDoctorInput = ({ specialties }: Props) => {
             autoCapitalize="none"
             autoCorrect="off"
             spellCheck="false"
-            placeholder="Busca o filtra"
+            placeholder="Search or filter"
           />
           <DropdownMenuTrigger asChild>
             <button
@@ -160,7 +160,7 @@ const SearchDoctorInput = ({ specialties }: Props) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="rounded-none">
             <Stethoscope className="size-4 mr-2" />
-            <span>Especialidad</span>
+            <span>Specialty</span>
           </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>
@@ -184,7 +184,7 @@ const SearchDoctorInput = ({ specialties }: Props) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="rounded-none">
             <CalendarDays className="size-4 mr-2" />
-            <span>Disponibilidad en</span>
+            <span>Availability in</span>
           </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>
@@ -204,7 +204,7 @@ const SearchDoctorInput = ({ specialties }: Props) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="rounded-none">
             <Star className="size-4 mr-2" />
-            <span>Calificación minima</span>
+            <span>Minimum qualification</span>
           </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>
@@ -224,7 +224,8 @@ const SearchDoctorInput = ({ specialties }: Props) => {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="rounded-none">
             <Briefcase className="size-4 mr-2" />
-            <span>Experiencia minima</span>
+            <span>
+            Minimum experience</span>
           </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>
